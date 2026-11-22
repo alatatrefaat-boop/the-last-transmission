@@ -44,7 +44,8 @@ header{
 .navlinks{display:flex;gap:6px;flex-wrap:wrap}
 .navlinks button{
  background:transparent;color:var(--muted);
- border:1px solid transparent;border-radius:7px;padding:9px 11px;
+ border:1px solid transparent;border-radius:7px;
+ padding:9px 11px;font-size:12px;
 }
 .navlinks button:hover,.navlinks button.active{
  color:var(--cyan);border-color:var(--border);background:var(--panel);
@@ -52,10 +53,7 @@ header{
 main{max-width:1150px;margin:auto;padding:28px 20px 70px}
 section{display:none;animation:appear .3s ease}
 section.active{display:block}
-@keyframes appear{
- from{opacity:0;transform:translateY(8px)}
- to{opacity:1;transform:none}
-}
+@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .hero{
  min-height:440px;display:flex;flex-direction:column;
  justify-content:center;padding:45px 25px;
@@ -70,24 +68,19 @@ section.active{display:block}
  box-shadow:0 0 0 35px #50dff20b,0 0 0 70px #50dff208;
  pointer-events:none;
 }
-.eyebrow{
- color:var(--cyan);font-size:12px;font-weight:bold;letter-spacing:3px;
-}
+.eyebrow{color:var(--cyan);font-size:12px;font-weight:bold;letter-spacing:3px}
 h1{font-size:clamp(38px,7vw,76px);line-height:1.02;margin:18px 0}
 h1 span{color:var(--cyan)}
 h2{font-size:30px;margin:8px 0 15px}
 h3{color:var(--cyan);margin:8px 0}
 p{color:#c1d0df}
-.hero p{max-width:650px;font-size:17px}
+.hero p{max-width:680px;font-size:17px}
 .btn{
  display:inline-block;border:0;border-radius:8px;
  padding:12px 18px;background:var(--cyan);
  color:#07111f;font-weight:800;margin:6px 5px 6px 0;
 }
-.btn.secondary{
- background:var(--panel2);color:var(--white);
- border:1px solid var(--border);
-}
+.btn.secondary{background:var(--panel2);color:var(--white);border:1px solid var(--border)}
 .btn.gold{background:var(--gold)}
 .btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
 .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
@@ -98,7 +91,7 @@ p{color:#c1d0df}
  border-radius:13px;padding:19px;margin:15px 0;
 }
 .card img{
- width:100%;height:240px;object-fit:contain;
+ width:100%;height:250px;object-fit:contain;
  background:#081526;border-radius:9px;margin:10px 0;
 }
 .source{
@@ -111,38 +104,9 @@ p{color:#c1d0df}
  padding:4px 9px;border-radius:20px;font-size:11px;font-weight:bold;
 }
 .muted{color:var(--muted);font-size:13px}
-.small{font-size:12px;color:var(--muted)}
-.stat{background:var(--panel2);padding:15px;border-radius:10px}
-.stat strong{display:block;font-size:24px;color:var(--cyan)}
 .big-number{font-size:35px;font-weight:900;color:var(--gold)}
-hr{border:0;border-top:1px solid var(--border);margin:23px 0}
-label{display:block;color:var(--muted);font-size:13px;margin:10px 0 5px}
-input,select,textarea{
- width:100%;padding:11px;background:#071526;color:var(--white);
- border:1px solid var(--border);border-radius:7px;
-}
-textarea{min-height:75px;resize:vertical}
-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
-th,td{padding:10px;text-align:center;border-bottom:1px solid var(--border)}
-th{color:var(--cyan);background:#132a40}
-tr:hover td{background:#132a402e}
-.table-wrap{overflow-x:auto}
-.chart{
- width:100%;height:auto;display:block;
- background:#081526;border:1px solid var(--border);
- border-radius:10px;margin:12px 0;
-}
-.chart text{fill:#b8ccdf;font-size:11px}
-.chart .axis{stroke:#7890a8;stroke-width:1.5}
-.chart .gridline{stroke:#28415a;stroke-width:1;stroke-dasharray:3 4}
-.chart .curve{
- fill:none;stroke:var(--cyan);stroke-width:3;
- stroke-linecap:round;stroke-linejoin:round;
-}
-.chart .point{fill:var(--gold);stroke:#fff;stroke-width:1}
-.chart .testline{stroke:var(--gold);stroke-width:2;stroke-dasharray:6 4}
-.question{padding:13px 0;border-bottom:1px solid var(--border)}
-.question strong{color:var(--gold)}
+.stat{background:var(--panel2);padding:15px;border-radius:10px;margin:8px 0}
+.stat strong{display:block;font-size:24px;color:var(--cyan)}
 .notice{
  border-left:3px solid var(--gold);background:#e8c77a12;
  padding:12px 15px;border-radius:5px;margin:12px 0;
@@ -154,58 +118,74 @@ tr:hover td{background:#132a402e}
  border:1px solid var(--border);border-radius:10px;
 }
 .member b{color:var(--gold);font-size:17px}
+.small{font-size:12px;color:var(--muted)}
+label{display:block;color:var(--muted);font-size:13px;margin:10px 0 5px}
+input,select,textarea{
+ width:100%;padding:11px;background:#071526;color:var(--white);
+ border:1px solid var(--border);border-radius:7px;
+}
+textarea{min-height:85px;resize:vertical}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th,td{padding:10px;text-align:center;border-bottom:1px solid var(--border)}
+th{color:var(--cyan);background:#132a40}
+.table-wrap{overflow-x:auto}
+.chart{
+ width:100%;height:auto;display:block;background:#081526;
+ border:1px solid var(--border);border-radius:10px;margin:12px 0;
+}
+.chart text{fill:#b8ccdf;font-size:11px}
+.chart .axis{stroke:#7890a8;stroke-width:1.5}
+.chart .gridline{stroke:#28415a;stroke-width:1;stroke-dasharray:3 4}
+.chart .curve{fill:none;stroke:var(--cyan);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.chart .point{fill:var(--gold);stroke:#fff;stroke-width:1}
+.chart .testline{stroke:var(--gold);stroke-width:2;stroke-dasharray:6 4}
 .quiz{
- background:#10263c;border:1px solid #31516b;
+ background:#10263c;border:1px solid var(--border);
  border-radius:12px;padding:18px;margin-top:18px;
 }
-.quiz-option{
- display:flex;align-items:center;gap:12px;
- padding:12px;margin:9px 0;
+.quiz-question{font-size:17px;font-weight:bold;color:var(--white)}
+.option{
+ display:flex;align-items:flex-start;gap:10px;
+ padding:12px;margin:9px 0;background:#071526;
  border:1px solid var(--border);border-radius:8px;
- cursor:pointer;background:#081526;
+ cursor:pointer;
 }
-.quiz-option:hover{border-color:var(--cyan)}
-.quiz-option input{width:auto}
-.quiz-result{
- display:none;padding:13px;margin-top:12px;border-radius:8px;
- background:#52d6a015;border:1px solid var(--green);
+.option:hover{border-color:var(--cyan)}
+.option input{width:auto;margin-top:5px;accent-color:var(--cyan)}
+.option span{color:#dce8f5}
+.feedback{
+ display:none;padding:13px;margin-top:12px;
+ border-radius:8px;background:#52d6a015;border:1px solid #52d6a055;
 }
+.feedback.wrong{background:#ff777715;border-color:#ff777755}
 .vote-option{
- display:flex;justify-content:space-between;align-items:center;
- gap:10px;padding:13px;margin:10px 0;
- background:#081526;border:1px solid var(--border);
- border-radius:9px;
+ padding:14px;background:#071526;border:1px solid var(--border);
+ border-radius:8px;margin:10px 0;
 }
-.vote-option b{color:var(--gold)}
-.vote-count{font-size:24px;font-weight:bold;color:var(--cyan)}
+.vote-option button{width:100%;text-align:left;background:none;color:var(--white);border:0;padding:5px}
 .progress{
- height:9px;background:#1c344b;border-radius:20px;overflow:hidden;
- margin-top:8px;
+ height:7px;background:#071526;border-radius:10px;overflow:hidden;margin:8px 0;
 }
-.progress div{height:100%;background:var(--cyan);width:0%}
-footer{
- text-align:center;padding:30px;color:var(--muted);
- border-top:1px solid var(--border);
-}
+.progress span{display:block;height:100%;background:var(--cyan)}
+footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid var(--border)}
 @media(max-width:750px){
  .nav{align-items:flex-start}
  .navlinks{width:100%;display:grid;grid-template-columns:repeat(3,1fr)}
- .navlinks button{font-size:11px;padding:8px 4px}
+ .navlinks button{font-size:10px;padding:8px 3px}
  .grid,.grid.three{grid-template-columns:1fr}
- .hero{min-height:390px}
+ .hero{min-height:370px}
  main{padding:18px 12px 45px}
  .card{padding:13px}
  h2{font-size:25px}
 }
 @media print{
+ header,footer,.no-print{display:none!important}
  body{background:white;color:black}
- header,footer,.no-print,.btn{display:none!important}
  main{max-width:none;padding:0}
  section{display:block!important;page-break-after:always}
  .card,.hero,.member,.stat,.quiz{background:white;color:black;border:1px solid #aaa}
  p,.muted,.small{color:#333}
  h1,h2,h3{color:#111}
- img{max-height:180px}
 }
 </style>
 </head>
@@ -235,43 +215,53 @@ footer{
  <div class="hero">
   <div class="eyebrow">CLASSIFIED MATHEMATICAL INVESTIGATION · 2026</div>
   <h1>THE LAST<br><span>TRANSMISSION</span></h1>
-  <h2>THE CURVES AROUND US</h2>
+  <h2>PROJECT: THE CURVES AROUND US</h2>
   <p>
-   In everyday life, one quantity often changes when another quantity changes.
-   We are investigating these relationships through real-life curves,
-   experiments and mathematical discoveries.
+   In life, one quantity often changes when another quantity changes.
+   Temperature changes with time, and the price of a taxi changes with distance.
+   Our mission is to investigate real-life curves, collect data and discover
+   mathematical ideas through our own observations.
   </p>
   <div>
    <button class="btn" onclick="showPage('observe')">START INVESTIGATION →</button>
-   <button class="btn secondary" onclick="showPage('report')">VIEW FINAL REPORT</button>
+   <button class="btn secondary" onclick="showPage('report')">FINAL REPORT</button>
   </div>
   <p class="small">FIVE INVESTIGATORS · THREE MISSIONS · ONE DISCOVERY</p>
  </div>
 
+ <div class="card">
+  <span class="tag">PROJECT GOAL</span>
+  <h2>Discover Through Investigation</h2>
+  <p>We will study curves from real life, perform two experiments, draw graphs, find the greatest and smallest values, and investigate how straight lines intersect curves.</p>
+ </div>
+
  <div class="grid three">
-  <div class="card"><span class="tag">MISSION 01</span><h3>OBSERVE</h3><p>Investigate four curves from everyday life.</p></div>
-  <div class="card"><span class="tag">MISSION 02</span><h3>MEASURE</h3><p>Collect real data from two experiments.</p></div>
-  <div class="card"><span class="tag">MISSION 03</span><h3>DISCOVER</h3><p>Draw lines and investigate intersections.</p></div>
+  <div class="card"><span class="tag">MISSION 01</span><h3>OBSERVE</h3><p>Find four pictures of curves from different fields and study their behavior.</p></div>
+  <div class="card"><span class="tag">MISSION 02</span><h3>MEASURE</h3><p>Perform two experiments, collect measurements, draw curves and find maximum and minimum values.</p></div>
+  <div class="card"><span class="tag">MISSION 03</span><h3>DISCOVER</h3><p>Draw vertical and horizontal lines, count intersections and compare curves with a circle.</p></div>
+ </div>
+
+ <div class="card">
+  <span class="tag">INVESTIGATION RULES</span>
+  <h2>Rules of the Mission</h2>
+  <ol>
+   <li>Work in a group of 3 or 4 students, with a time limit of two weeks. Our teacher has approved our group of five.</li>
+   <li>Do not write mathematical definitions or copy a lesson about functions.</li>
+   <li>Complete the project tasks in order and use complete sentences when written explanations are required.</li>
+   <li>Every student must be able to explain all the work.</li>
+  </ol>
  </div>
 
  <div class="card">
   <h2>THE INVESTIGATION TEAM</h2>
+  <p>Five investigators. One mission. Equal participation.</p>
   <div class="grid">
-   <div class="member"><b>01 · REFAAT</b><p>Mission Commander</p></div>
-   <div class="member"><b>04 · HADI</b><p>Graph Engineer</p></div>
-   <div class="member"><b>03 · MOHAMMAD</b><p>Data Specialist</p></div>
-   <div class="member"><b>04 · JAWAD</b><p>Signal Analyst</p></div>
-   <div class="member"><b>05 · AHMAD</b><p>Discovery Specialist</p></div>
+   <div class="member"><b>01 · REFAAT</b><p>Mission Commander — leads the investigation and introduces the discoveries.</p></div>
+   <div class="member"><b>02 · JAWAD</b><p>Signal Analyst — explains the observations and participates in the experiment analysis.</p></div>
+   <div class="member"><b>03 · MOHAMMAD</b><p>Data Specialist — presents the measurements and explains the results.</p></div>
+   <div class="member"><b>04 · HADI</b><p>Graph Engineer — presents the curves and explains the graphical investigations.</p></div>
+   <div class="member"><b>05 · AHMAD</b><p>Discovery Specialist — presents the circle experiment and the final discovery.</p></div>
   </div>
- </div>
-
- <div class="card">
-  <h2>PROJECT GOAL</h2>
-  <p>
-   Discover how one quantity changes when another quantity changes.
-   Observe real curves, perform experiments, and investigate how
-   vertical and horizontal lines intersect them.
-  </p>
  </div>
 </section>
 
@@ -279,11 +269,8 @@ footer{
 <section id="observe">
  <div class="eyebrow">MISSION 01 / FIELD OBSERVATION</div>
  <h2>OBSERVE THE CURVES</h2>
- <p>Four fields. Four real-life situations. Four curves to investigate.</p>
- <div class="notice">
-  Every picture must contain one line curve and two named axes.
-  Read the actual graph before writing its values.
- </div>
+ <p>Four fields. Four real-life situations. Four curves.</p>
+ <div class="notice">Study each graph carefully. Discuss the question with your group, choose one answer and press SUBMIT ANSWER to reveal the correct answer.</div>
  <div id="observeCards"></div>
 </section>
 
@@ -292,41 +279,42 @@ footer{
  <div class="eyebrow">MISSION 02 / EXPERIMENTAL DATA</div>
  <h2>MEASURE THE CHANGE</h2>
  <p>Two experiments. Real measurements. Two curves.</p>
- <div class="notice">
-  The initial values below are examples only. Replace them with your actual measurements.
-  You need at least eight measurements for each experiment.
- </div>
+ <div class="notice">Replace all demonstration values with your group's actual measurements. The demonstration data must not be presented as real results.</div>
 
  <div class="card">
   <span class="tag">EXPERIMENT 01</span>
   <h2>INSTAGRAM LIKES</h2>
   <p>How many new likes does a post receive during each hour?</p>
-  <div class="notice">
-   Enter the cumulative total likes at each hour.
-   The website calculates the likes gained by subtracting the previous total.
-  </div>
+  <div class="notice">Enter the cumulative total likes at each time. The website calculates how many likes were gained since the previous measurement.</div>
   <div class="table-wrap" id="likesTable"></div>
   <button class="btn secondary no-print" onclick="addRow('likes')">+ ADD MEASUREMENT</button>
   <button class="btn no-print" onclick="updateCharts()">UPDATE GRAPH</button>
   <div id="likesStats" class="grid"></div>
   <div id="likesChart"></div>
   <div id="likesDescription"></div>
+  <div class="quiz">
+   <h3>EXPERIMENT CHALLENGE</h3>
+   <p class="quiz-question">Why must we subtract consecutive total-like measurements to find the likes gained during one hour?</p>
+   <div id="measureQuiz1"></div>
+  </div>
  </div>
 
  <div class="card">
   <span class="tag">EXPERIMENT 02</span>
   <h2>INTERNET SPEED AT HOME</h2>
   <p>How does download speed change during different hours of the day?</p>
-  <div class="notice">
-   Record the download speed in Mbps.
-   Use the same device and location when possible.
-  </div>
+  <div class="notice">Record download speed in Mbps. Use the same device and location whenever possible.</div>
   <div class="table-wrap" id="internetTable"></div>
   <button class="btn secondary no-print" onclick="addRow('internet')">+ ADD MEASUREMENT</button>
   <button class="btn no-print" onclick="updateCharts()">UPDATE GRAPH</button>
   <div id="internetStats" class="grid"></div>
   <div id="internetChart"></div>
   <div id="internetDescription"></div>
+  <div class="quiz">
+   <h3>EXPERIMENT CHALLENGE</h3>
+   <p class="quiz-question">If the internet speed is high at two different times but lower between them, what does this tell us about the behavior of the curve?</p>
+   <div id="measureQuiz2"></div>
+  </div>
  </div>
 </section>
 
@@ -334,28 +322,38 @@ footer{
 <section id="discover">
  <div class="eyebrow">MISSION 03 / MATHEMATICAL DISCOVERY</div>
  <h2>ONLY ONE RESULT OR MORE?</h2>
- <p>Investigate how vertical and horizontal lines intersect different curves.</p>
+ <p>Investigate how straight lines intersect curves.</p>
 
  <div class="card">
   <h3>PART A — OUR TWO EXPERIMENTS</h3>
+  <p>Select one of your measured curves and explore how vertical and horizontal lines intersect it.</p>
   <label>Select a curve</label>
   <select id="discoverSelect" onchange="drawDiscovery()">
    <option value="likes">Instagram Likes Gained</option>
    <option value="internet">Internet Speed</option>
   </select>
   <div id="discoverChart"></div>
-  <p>Choose three different horizontal-axis positions.</p>
-  <div id="verticalTests"></div>
-  <p>Choose a vertical-axis value to test with a horizontal line.</p>
-  <label>Horizontal line value</label>
+  <h3>Vertical line investigation</h3>
+  <p>Move the vertical line across the graph and observe the number of intersections.</p>
+  <label>Horizontal-axis position</label>
+  <input type="range" id="verticalPosition" min="0" max="8" step=".1" value="2" oninput="drawDiscovery()">
+  <div id="verticalResult" class="stat"></div>
+  <h3>Horizontal line investigation</h3>
+  <label>Vertical-axis value</label>
   <input type="number" id="horizontalValue" value="20" oninput="drawDiscovery()">
-  <div id="horizontalTest"></div>
+  <div id="horizontalResult" class="stat"></div>
  </div>
 
  <div class="card">
-  <h3>PART B — THE FOUR OBSERVATION CURVES</h3>
-  <p>Draw a vertical line on each picture and count its intersections.</p>
-  <div id="partB"></div>
+  <h3>PART B — OBSERVING INTERSECTIONS</h3>
+  <p>Use the four curves from the Observe mission. Draw a vertical line on each printed picture and record how many times it touches the curve.</p>
+  <div class="notice">This part is completed on your printed pictures. The four observation graphs do not need to be repeated here.</div>
+  <div class="grid">
+   <div class="stat"><strong>HEALTH</strong><p>Record your observed intersection count on the picture.</p></div>
+   <div class="stat"><strong>WEATHER</strong><p>Record your observed intersection count on the picture.</p></div>
+   <div class="stat"><strong>ECONOMY</strong><p>Record your observed intersection count on the picture.</p></div>
+   <div class="stat"><strong>SPORT</strong><p>Record your observed intersection count on the picture.</p></div>
+  </div>
  </div>
 
  <div class="card">
@@ -365,57 +363,87 @@ footer{
   <input type="range" id="circleX" min="-5" max="5" step=".1" value="0" oninput="drawCircle()">
   <div id="circleChart"></div>
   <div id="circleResult" class="stat"></div>
+  <p>Observe what happens when the vertical line is outside the circle, touches its edge, or passes through its middle.</p>
  </div>
 
  <div class="card">
-  <h3>PART D — CONCLUSION</h3>
-  <label>Write your discovery in 2–3 complete sentences.</label>
-  <textarea id="conclusion" placeholder="Write your group's discovery here..."></textarea>
+  <h3>PART D — OUR DISCOVERY</h3>
+  <p>Write two or three sentences explaining what your group discovered and the difference between your experimental curves and the circle.</p>
+  <textarea id="conclusion" placeholder="Our investigation showed that..."></textarea>
  </div>
 </section>
 
 <!-- CLASS VOTE -->
 <section id="vote">
  <div class="eyebrow">LIVE CLASSROOM PARTICIPATION</div>
- <h2>THE CLASSROOM CHALLENGE</h2>
- <p>
-  Everyone can participate using the same laptop.
-  Ask the students to choose A, B or C, then enter the number of votes.
- </p>
+ <h2>THE FINAL CHALLENGE</h2>
+ <p>One question. One classroom. A discussion before the answer is revealed.</p>
 
- <div class="notice">
-  The audience does not need phones.
-  Students can discuss their answers and vote by raising their hands.
-  One group member records the number of votes for each option.
+ <div class="card">
+  <span class="tag">CLASSROOM DEBATE · ONE QUESTION</span>
+  <h2>The Infinite Hotel Challenge</h2>
+  <p class="quiz-question">
+   Imagine a hotel with infinitely many rooms, numbered 1, 2, 3, 4, and so on.
+   Every room is occupied. A new guest arrives and asks for a room.
+   The manager moves the guest in room 1 to room 2, the guest in room 2 to room 3,
+   and so on, moving every guest one room forward.
+   Can the hotel accommodate the new guest without asking anyone to leave?
+  </p>
+  <div class="notice">Take your time. Discuss the consequences of moving every guest. Everyone must think before voting.</div>
+
+  <div class="vote-option">
+   <button onclick="castVote('A')"><strong>A.</strong> No, because every room is already occupied.</button>
+   <div class="progress"><span id="barA" style="width:0%"></span></div>
+   <div class="small"><span id="countA">0</span> votes</div>
+  </div>
+  <div class="vote-option">
+   <button onclick="castVote('B')"><strong>B.</strong> Yes, because every guest can move to the next numbered room, leaving room 1 free.</button>
+   <div class="progress"><span id="barB" style="width:0%"></span></div>
+   <div class="small"><span id="countB">0</span> votes</div>
+  </div>
+  <div class="vote-option">
+   <button onclick="castVote('C')"><strong>C.</strong> Yes, but only if half the guests leave the hotel.</button>
+   <div class="progress"><span id="barC" style="width:0%"></span></div>
+   <div class="small"><span id="countC">0</span> votes</div>
+  </div>
+  <div class="vote-option">
+   <button onclick="castVote('D')"><strong>D.</strong> No, because moving guests would create a room number that does not exist.</button>
+   <div class="progress"><span id="barD" style="width:0%"></span></div>
+   <div class="small"><span id="countD">0</span> votes</div>
+  </div>
+
+  <div class="stat">
+   <strong id="totalVotes">0</strong>
+   <span class="muted">TOTAL CLASS VOTES</span>
+  </div>
+  <button class="btn secondary no-print" onclick="resetVotes()">RESET VOTES</button>
+  <button class="btn gold no-print" onclick="revealVote()">REVEAL CORRECT ANSWER</button>
+  <div id="voteAnswer" class="feedback">
+   <h3>THE CORRECT ANSWER: B</h3>
+   <p>Yes. Every guest moves from room n to room n + 1. Room 1 becomes free, and every existing guest still has a room. The surprising idea is that an infinite collection can be rearranged to make space for another member.</p>
+  </div>
  </div>
-
- <div id="voteQuestions"></div>
-
 </section>
 
 <!-- FINAL REPORT -->
 <section id="report">
  <div class="eyebrow">INVESTIGATION COMPLETE</div>
  <h2>FINAL REPORT</h2>
-
  <div class="hero" style="min-height:280px">
   <div class="eyebrow">TRANSMISSION STATUS: COMPLETE</div>
   <h1>THE CURVES<br><span>AROUND US</span></h1>
-  <p>
-   From everyday observations to real experiments,
-   our investigation explored how quantities change
-   and how lines intersect curves.
-  </p>
+  <p>We observed real-life curves, measured changing quantities and investigated how lines intersect different curves.</p>
+  <p class="small">FIVE INVESTIGATORS · ONE MATHEMATICAL DISCOVERY</p>
  </div>
 
  <div class="card">
   <h2>OUR FIVE INVESTIGATORS</h2>
   <div class="grid">
-   <div class="member"><b>REFAAT</b></div>
-   <div class="member"><b>HADI</b></div>
-   <div class="member"><b>MOHAMMAD</b></div>
-   <div class="member"><b>JAWAD</b></div>
-   <div class="member"><b>AHMAD</b></div>
+   <div class="member"><b>REFAAT</b><p>Mission Commander</p></div>
+   <div class="member"><b>JAWAD</b><p>Signal Analyst</p></div>
+   <div class="member"><b>MOHAMMAD</b><p>Data Specialist</p></div>
+   <div class="member"><b>HADI</b><p>Graph Engineer</p></div>
+   <div class="member"><b>AHMAD</b><p>Discovery Specialist</p></div>
   </div>
  </div>
 
@@ -426,30 +454,17 @@ footer{
 
  <div class="card">
   <h2>OUR CONCLUSION</h2>
-  <p id="finalConclusion">Complete the Discover conclusion section.</p>
+  <p id="finalConclusion">Complete the Discover conclusion section to display your group's final discovery here.</p>
  </div>
 
  <div class="card">
-  <h2>OUR DISCOVERY</h2>
-  <p>
-   We investigated four real-life curves, collected data from two experiments,
-   and explored the intersections of vertical and horizontal lines.
-   We also compared our curves with a circle.
-  </p>
- </div>
-
- <div class="card">
-  <h2>TEAM ROLES</h2>
-  <div class="table-wrap">
-   <table>
-    <tr><th>Student</th><th>Role</th></tr>
-    <tr><td>Refaat</td><td>Mission Commander</td></tr>
-    <tr><td>Hadi</td><td>Graph Engineer</td></tr>
-    <tr><td>Mohammad</td><td>Data Specialist</td></tr>
-    <tr><td>Jawad</td><td>Signal Analyst</td></tr>
-    <tr><td>Ahmad</td><td>Discovery Specialist</td></tr>
-   </table>
-  </div>
+  <h2>PROJECT MISSIONS</h2>
+  <table>
+   <tr><th>Mission</th><th>Task</th></tr>
+   <tr><td>01</td><td>Observe four real-life curves</td></tr>
+   <tr><td>02</td><td>Measure two experiments and find maximum and minimum</td></tr>
+   <tr><td>03</td><td>Investigate intersections and compare with a circle</td></tr>
+  </table>
  </div>
 
  <button class="btn gold no-print" onclick="window.print()">PRINT FINAL REPORT</button>
@@ -458,242 +473,182 @@ footer{
 </main>
 
 <footer>
- THE LAST TRANSMISSION · THE CURVES AROUND US
- <br>Five Investigators · One Mathematical Discovery
+ THE LAST TRANSMISSION · PROJECT: THE CURVES AROUND US
+ <br>Five Investigators · Three Missions · One Mathematical Discovery
 </footer>
 
 <script>
-
-// ==========================================
 // NAVIGATION
-// ==========================================
-
 function showPage(id){
  document.querySelectorAll('main section').forEach(s=>s.classList.remove('active'));
  document.getElementById(id).classList.add('active');
-
  document.querySelectorAll('.navlinks button').forEach(b=>{
   b.classList.toggle('active',b.dataset.page===id);
  });
-
  window.scrollTo({top:0,behavior:'smooth'});
-
  if(id==='discover')drawDiscovery();
  if(id==='report')updateReport();
 }
-
 document.querySelectorAll('.navlinks button').forEach(b=>{
  b.addEventListener('click',()=>showPage(b.dataset.page));
 });
 
-
-// ==========================================
-// OBSERVE
-// ==========================================
-
+// OBSERVE GRAPHS AND MCQ
 const observeData=[
  {
   field:"HEALTH",
   title:"Child Growth: Height by Age",
   image:"images/health.png",
-  x:"Age (years)",
-  y:"Height (cm)",
   source:"World Health Organization (WHO). WHO Growth Chart.",
-  questions:[
-   "This curve belongs to the field of Health and shows a child's height as age increases.",
-   "The horizontal axis represents age, measured in years.",
-   "The vertical axis represents height, measured in centimetres.",
-   "The curve shows how a child's height changes while growing older.",
-   "Choose a point from the picture and write its coordinates and meaning.",
-   "Describe the parts where the curve rises or falls.",
-   "Read the greatest and smallest height values from the actual graph.",
-   "This curve helps monitor growth and identify whether a child is growing as expected."
+  question:"A child's height increases from age 5 to age 10, but the curve becomes less steep. Which conclusion is most reasonable?",
+  options:[
+   "A. The child is losing height.",
+   "B. The child is still growing, but the rate of growth may be slowing.",
+   "C. The child's age is decreasing.",
+   "D. The height remains exactly the same."
   ],
-  mcq:{
-   q:"A child is 120 cm tall at age 7 and 130 cm tall at age 9. What can we conclude from these two points?",
-   options:[
-    "The child grew exactly 5 cm every year.",
-    "The child's height increased by 10 cm over two years.",
-    "The child's height decreased by 10 cm."
-   ],
-   answer:1,
-   explanation:"The difference is 130 − 120 = 10 cm over two years. We cannot conclude that growth was exactly 5 cm every year without knowing what happened between the two measurements."
-  }
+  correct:1,
+  explanation:"A curve that continues rising shows increasing height. A less steep rise means the increase is slower, not that height is decreasing."
  },
  {
   field:"WEATHER",
   title:"Temperature Changes During a Day",
   image:"images/weather.png",
-  x:"Time (hours)",
-  y:"Temperature (°C)",
   source:"University of Waterloo Weather Station.",
-  questions:[
-   "This curve belongs to the field of Weather and shows temperature changes during a day.",
-   "The horizontal axis represents time, measured in hours.",
-   "The vertical axis represents temperature, measured in degrees Celsius.",
-   "The curve shows how air temperature changes during the day.",
-   "Choose a point and explain what its coordinates represent.",
-   "Describe where the temperature rises and where it falls.",
-   "Read the highest and lowest temperatures from the actual graph.",
-   "This curve helps people plan activities and choose suitable clothing."
+  question:"Suppose the temperature reaches the same value at 9 AM and 5 PM. What does this tell us?",
+  options:[
+   "A. The temperature must have stayed constant all day.",
+   "B. The temperature was necessarily highest at both times.",
+   "C. The same temperature occurred at two different times.",
+   "D. Time stopped changing between these points."
   ],
-  mcq:{
-   q:"The temperature is 12°C at 8 AM, 20°C at noon, and 16°C at 4 PM. Which statement is definitely correct?",
-   options:[
-    "The temperature increased during the entire period.",
-    "The temperature increased first, then decreased.",
-    "The temperature decreased first, then increased."
-   ],
-   answer:1,
-   explanation:"From 8 AM to noon, temperature increased from 12°C to 20°C. From noon to 4 PM, it decreased to 16°C."
-  }
+  correct:2,
+  explanation:"The same vertical-axis value can occur at two different horizontal-axis positions. This does not mean the temperature stayed constant between them."
  },
  {
   field:"ECONOMY",
   title:"Gasoline Prices in Lebanon",
   image:"images/economy.png",
-  x:"Date / Month",
-  y:"Price (unit shown in source)",
   source:"GlobalPetrolPrices (Lebanon).",
-  questions:[
-   "This curve belongs to the field of Economy and shows gasoline price changes.",
-   "The horizontal axis represents the date or month shown in the source.",
-   "The vertical axis represents gasoline price, using the unit shown in the source.",
-   "The curve shows how the price of gasoline changes over time.",
-   "Choose a point and explain its coordinates.",
-   "Describe the intervals where the price increases or decreases.",
-   "Read the highest and lowest prices from the graph.",
-   "This curve helps households and businesses understand changes in fuel costs."
+  question:"If the gasoline-price curve rises sharply during one period and then becomes almost flat, what is the best interpretation?",
+  options:[
+   "A. The price increased rapidly, then changed very little.",
+   "B. The price became zero.",
+   "C. The price decreased at the same rate.",
+   "D. The months stopped passing."
   ],
-  mcq:{
-   q:"Gasoline costs 800,000 LBP in January and 1,000,000 LBP in March. What is the percentage increase?",
-   options:[
-    "20%",
-    "25%",
-    "200,000%"
-   ],
-   answer:1,
-   explanation:"The increase is 200,000 LBP. Dividing 200,000 by the original 800,000 gives 0.25, or 25%."
-  }
+  correct:0,
+  explanation:"A steep upward part represents a rapid increase. A nearly horizontal part means the price changes very little during that interval."
  },
  {
   field:"SPORT",
   title:"Athlete's Performance During Exercise",
   image:"images/sport.png",
-  x:"Time (as shown in source)",
-  y:"Performance measurement (as shown in source)",
   source:"Frontiers in Sports and Active Living.",
-  questions:[
-   "This curve belongs to the field of Sport and shows a change in athletic performance.",
-   "The horizontal axis represents time, using the unit shown in the source.",
-   "The vertical axis represents the measured sports quantity and its unit.",
-   "The curve shows how the measured sports quantity changes.",
-   "Choose a point and explain its coordinates.",
-   "Describe where the curve rises and where it falls.",
-   "Read the greatest and smallest values from the actual graph.",
-   "This curve can help athletes and coaches study performance."
+  question:"An athlete's measured value rises, reaches a peak, and then falls. Which statement best describes the graph?",
+  options:[
+   "A. The value is constant throughout the activity.",
+   "B. The value increases, reaches a greatest recorded value, then decreases.",
+   "C. The athlete's time moves backwards.",
+   "D. The graph contains no changing quantities."
   ],
-  mcq:{
-   q:"An athlete's speed is 4 m/s at the beginning, 8 m/s later, and 5 m/s at the end. Which statement is correct?",
-   options:[
-    "The maximum measured speed is 5 m/s.",
-    "The speed increased and then decreased.",
-    "The speed decreased during the entire period."
-   ],
-   answer:1,
-   explanation:"The speed rose from 4 to 8 m/s, then fell to 5 m/s. The maximum measured speed was 8 m/s."
-  }
+  correct:1,
+  explanation:"The curve first rises, reaches a peak, and then descends. The peak represents the greatest recorded value."
  }
 ];
 
 function renderObserve(){
  const root=document.getElementById('observeCards');
-
  root.innerHTML=observeData.map((o,i)=>`
   <div class="card">
    <span class="tag">${String(i+1).padStart(2,'0')} · ${o.field}</span>
    <h2>${o.title}</h2>
-
-   <img src="${o.image}" alt="${o.title}"
-    onerror="this.alt='Image not found: ${o.image}'">
-
-   <div class="source">
-    <strong>Source:</strong> ${o.source}
-   </div>
-
-   <p class="small">
-    Horizontal axis: ${o.x}<br>
-    Vertical axis: ${o.y}
-   </p>
-
-   <h3>OBSERVATION ANALYSIS</h3>
-
-   ${o.questions.map((q,j)=>`
-    <div class="question">
-     <strong>${j+1}. ${[
-      "Field and title",
-      "Horizontal axis",
-      "Vertical axis",
-      "What does the curve show?",
-      "A point and its coordinates",
-      "Increasing and decreasing parts",
-      "Maximum and minimum",
-      "Real-life use"
-     ][j]}</strong>
-     <p>${q}</p>
-     <textarea id="answer${i}_${j}" placeholder="Write your complete answer here..."></textarea>
-    </div>
-   `).join('')}
-
+   <img src="${o.image}" alt="${o.title}">
+   <div class="source"><strong>Source:</strong> ${o.source}</div>
    <div class="quiz">
-    <span class="tag">LOGIC CHALLENGE ${i+1}</span>
-    <h3>${o.mcq.q}</h3>
-
-    ${o.mcq.options.map((option,j)=>`
-     <label class="quiz-option">
-      <input type="radio" name="observeQuiz${i}" value="${j}">
-      <span><b>${String.fromCharCode(65+j)}.</b> ${option}</span>
+    <h3>THINKING CHALLENGE ${i+1}</h3>
+    <p class="quiz-question">${o.question}</p>
+    ${o.options.map((option,j)=>`
+     <label class="option">
+      <input type="radio" name="observe${i}" value="${j}">
+      <span>${option}</span>
      </label>
     `).join('')}
-
-    <button class="btn" onclick="checkObserveQuiz(${i})">SUBMIT ANSWER</button>
-
-    <div class="quiz-result" id="observeResult${i}"></div>
+    <button class="btn no-print" onclick="submitQuiz('observe${i}',${o.correct},'observeFeedback${i}',${JSON.stringify(o.explanation)})">SUBMIT ANSWER</button>
+    <div class="feedback" id="observeFeedback${i}"></div>
    </div>
-
   </div>
  `).join('');
 }
+renderObserve();
 
-function checkObserveQuiz(i){
- const selected=document.querySelector(`input[name="observeQuiz${i}"]:checked`);
- const result=document.getElementById('observeResult'+i);
- const q=observeData[i].mcq;
-
- result.style.display='block';
-
+function submitQuiz(group,correct,feedbackId,explanation){
+ const selected=document.querySelector(`input[name="${group}"]:checked`);
+ const box=document.getElementById(feedbackId);
+ box.style.display='block';
+ box.classList.remove('wrong');
  if(!selected){
-  result.innerHTML='<span class="bad">Please choose an answer first.</span>';
+  box.classList.add('wrong');
+  box.innerHTML='<strong>Please choose an answer first.</strong>';
   return;
  }
-
- if(Number(selected.value)===q.answer){
-  result.innerHTML='<span class="good"><b>✓ CORRECT ANSWER!</b></span><p>'+q.explanation+'</p>';
+ if(Number(selected.value)===correct){
+  box.innerHTML='<strong class="good">CORRECT ANSWER!</strong><p>'+explanation+'</p>';
  }else{
-  result.innerHTML='<span class="bad"><b>NOT QUITE!</b></span><p>Think again. The correct answer is '+String.fromCharCode(65+q.answer)+'. '+q.explanation+'</p>';
+  box.classList.add('wrong');
+  box.innerHTML='<strong class="bad">NOT QUITE. TRY AGAIN.</strong><p>Discuss the graph again and reconsider your choice.</p>';
  }
 }
 
-renderObserve();
+// MEASURE MCQS
+const measureQuestions=[
+ {
+  id:"measureQuiz1",
+  name:"measure1",
+  question:"Why do we subtract consecutive total-like measurements?",
+  options:[
+   "A. To find the total likes since the account was created.",
+   "B. To find the new likes received during that interval.",
+   "C. To remove likes from the post.",
+   "D. To calculate the number of followers."
+  ],
+  correct:1,
+  explanation:"Subtracting the earlier total from the later total gives the number of new likes gained during that interval."
+ },
+ {
+  id:"measureQuiz2",
+  name:"measure2",
+  question:"If internet speed is high at two different times but lower between them, what does this tell us?",
+  options:[
+   "A. The speed was necessarily high throughout the entire period.",
+   "B. The speed changed and reached lower values between the two times.",
+   "C. The internet was disconnected all day.",
+   "D. The measurements must be identical."
+  ],
+  correct:1,
+  explanation:"The graph can rise and fall between two measurements. Knowing the values at two times does not mean the values between them were the same."
+ }
+];
 
+function renderMeasureQuizzes(){
+ measureQuestions.forEach((q,i)=>{
+  const root=document.getElementById(q.id);
+  root.innerHTML=`
+   ${q.options.map((o,j)=>`
+    <label class="option">
+     <input type="radio" name="${q.name}" value="${j}">
+     <span>${o}</span>
+    </label>
+   `).join('')}
+   <button class="btn no-print" onclick="submitQuiz('${q.name}',${q.correct},'${q.id}Feedback',${JSON.stringify(q.explanation)})">SUBMIT ANSWER</button>
+   <div class="feedback" id="${q.id}Feedback"></div>
+  `;
+ });
+}
+renderMeasureQuizzes();
 
-// ==========================================
-// MEASURE
-// ==========================================
-
-// DEMONSTRATION VALUES ONLY.
-// REPLACE WITH YOUR REAL MEASUREMENTS.
-
+// EXPERIMENT DATA
+// DEMONSTRATION VALUES ONLY — REPLACE WITH REAL MEASUREMENTS.
 let likes=[
  {time:"Start",total:0},
  {time:"Hour 1",total:12},
@@ -728,49 +683,18 @@ function gains(){
 
 function makeTable(type){
  if(type==='likes'){
-  return `
-   <table>
-    <thead>
-     <tr><th>Time</th><th>Total likes</th><th>Likes gained</th></tr>
-    </thead>
-    <tbody>
-     ${likes.map((r,i)=>`
-      <tr>
-       <td>
-        <input aria-label="Time" value="${r.time}"
-         onchange="likes[${i}].time=this.value;updateCharts()">
-       </td>
-       <td>
-        <input type="number" min="0" value="${r.total}"
-         onchange="likes[${i}].total=this.value;updateCharts()">
-       </td>
-       <td>${i===0?'—':fmt(Number(r.total)-Number(likes[i-1].total))}</td>
-      </tr>
-     `).join('')}
-    </tbody>
-   </table>
-  `;
+  return `<table><thead><tr><th>Time</th><th>Total likes</th><th>Likes gained</th></tr></thead><tbody>
+  ${likes.map((r,i)=>`<tr>
+   <td><input value="${r.time}" onchange="likes[${i}].time=this.value;updateCharts()"></td>
+   <td><input type="number" min="0" value="${r.total}" onchange="likes[${i}].total=this.value;updateCharts()"></td>
+   <td>${i===0?'—':fmt(Number(r.total)-Number(likes[i-1].total))}</td>
+  </tr>`).join('')}</tbody></table>`;
  }
-
- return `
-  <table>
-   <thead><tr><th>Time</th><th>Download speed (Mbps)</th></tr></thead>
-   <tbody>
-    ${internet.map((r,i)=>`
-     <tr>
-      <td>
-       <input value="${r.time}"
-        onchange="internet[${i}].time=this.value;updateCharts()">
-      </td>
-      <td>
-       <input type="number" min="0" step=".1" value="${r.value}"
-        onchange="internet[${i}].value=this.value;updateCharts()">
-      </td>
-     </tr>
-    `).join('')}
-   </tbody>
-  </table>
- `;
+ return `<table><thead><tr><th>Time</th><th>Download speed (Mbps)</th></tr></thead><tbody>
+ ${internet.map((r,i)=>`<tr>
+  <td><input value="${r.time}" onchange="internet[${i}].time=this.value;updateCharts()"></td>
+  <td><input type="number" min="0" step=".1" value="${r.value}" onchange="internet[${i}].value=this.value;updateCharts()"></td>
+ </tr>`).join('')}</tbody></table>`;
 }
 
 function addRow(type){
@@ -786,11 +710,9 @@ function addRow(type){
 function getStats(arr){
  const valid=arr.filter(p=>Number.isFinite(Number(p.value)));
  if(!valid.length)return null;
-
  const max=Math.max(...valid.map(p=>Number(p.value)));
  const min=Math.min(...valid.map(p=>Number(p.value)));
-
- return {
+ return{
   max,min,
   maxPoint:valid.find(p=>Number(p.value)===max),
   minPoint:valid.find(p=>Number(p.value)===min)
@@ -799,442 +721,154 @@ function getStats(arr){
 
 function describeCurve(arr){
  let up=[],down=[];
-
  for(let i=1;i<arr.length;i++){
-  const a=Number(arr[i-1].value);
-  const b=Number(arr[i].value);
-
+  const a=Number(arr[i-1].value),b=Number(arr[i].value);
   if(b>a)up.push(`${arr[i-1].time} to ${arr[i].time}`);
   if(b<a)down.push(`${arr[i-1].time} to ${arr[i].time}`);
  }
-
- return `
-  <p><b>The curve goes up</b> from
-  ${up.length?up.join(', '):'no interval'},
-  then goes down from
-  ${down.length?down.join(', '):'no interval'}.</p>
- `;
+ return `The curve goes up from ${up.length?up.join(', '):'no interval'}; it goes down from ${down.length?down.join(', '):'no interval'}.`;
 }
 
 function makeStats(arr,unit,xLabel){
  const s=getStats(arr);
- if(!s)return '';
-
+ if(!s)return '<p>Enter valid measurements.</p>';
  return `
-  <div class="stat">
-   <span class="muted">MAXIMUM</span>
-   <strong>${fmt(s.max)} ${unit}</strong>
-   <span class="small">When ${xLabel} = ${s.maxPoint.time}</span>
-  </div>
-  <div class="stat">
-   <span class="muted">MINIMUM</span>
-   <strong>${fmt(s.min)} ${unit}</strong>
-   <span class="small">When ${xLabel} = ${s.minPoint.time}</span>
-  </div>
- `;
+ <div class="stat"><span class="muted">MAXIMUM</span><strong>${fmt(s.max)} ${unit}</strong><span class="small">When ${xLabel} = ${s.maxPoint.time}</span></div>
+ <div class="stat"><span class="muted">MINIMUM</span><strong>${fmt(s.min)} ${unit}</strong><span class="small">When ${xLabel} = ${s.minPoint.time}</span></div>`;
 }
 
 function svgChart(arr,yLabel){
  const w=850,h=330,left=65,right=25,top=25,bottom=65;
-
- if(!arr.length)return '<p>No measurements available.</p>';
-
  const values=arr.map(p=>Number(p.value));
-
- if(values.some(v=>!Number.isFinite(v)))
-  return '<p>Enter valid measurements.</p>';
-
- const min=Math.min(0,...values);
- const max=Math.max(...values);
+ if(!arr.length||values.some(v=>!Number.isFinite(v)))return '<p>Enter valid measurements.</p>';
+ const min=Math.min(0,...values),max=Math.max(...values);
  const range=max-min||1;
-
  const x=i=>left+i*(w-left-right)/Math.max(1,arr.length-1);
  const y=v=>top+(max-v)*(h-top-bottom)/range;
-
  const points=arr.map((p,i)=>`${x(i)},${y(Number(p.value))}`).join(' ');
-
  let grid='';
-
  for(let i=0;i<=4;i++){
-  const v=min+range*i/4;
-  const yy=y(v);
-  grid+=`
-   <line class="gridline" x1="${left}" y1="${yy}" x2="${w-right}" y2="${yy}"/>
-   <text x="${left-10}" y="${yy+4}" text-anchor="end">${fmt(v)}</text>
-  `;
+  const v=min+range*i/4,yy=y(v);
+  grid+=`<line class="gridline" x1="${left}" y1="${yy}" x2="${w-right}" y2="${yy}"/><text x="${left-10}" y="${yy+4}" text-anchor="end">${fmt(v)}</text>`;
  }
-
- return `
-  <svg class="chart" viewBox="0 0 ${w} ${h}" role="img">
-   ${grid}
-
-   <line class="axis" x1="${left}" y1="${top}" x2="${left}" y2="${h-bottom}"/>
-   <line class="axis" x1="${left}" y1="${h-bottom}" x2="${w-right}" y2="${h-bottom}"/>
-
-   <polyline class="curve" points="${points}"/>
-
-   ${arr.map((p,i)=>`
-    <circle class="point" cx="${x(i)}" cy="${y(Number(p.value))}" r="5">
-     <title>${p.time}: ${p.value} ${yLabel}</title>
-    </circle>
-    <text x="${x(i)}" y="${h-bottom+19}" text-anchor="middle">${p.time}</text>
-   `).join('')}
-
-   <text x="${left}" y="15">${yLabel}</text>
-  </svg>
- `;
+ return `<svg class="chart" viewBox="0 0 ${w} ${h}" role="img">
+ ${grid}
+ <line class="axis" x1="${left}" y1="${top}" x2="${left}" y2="${h-bottom}"/>
+ <line class="axis" x1="${left}" y1="${h-bottom}" x2="${w-right}" y2="${h-bottom}"/>
+ <polyline class="curve" points="${points}"/>
+ ${arr.map((p,i)=>`<circle class="point" cx="${x(i)}" cy="${y(Number(p.value))}" r="5"><title>${p.time}: ${p.value} ${yLabel}</title></circle>
+ <text x="${x(i)}" y="${h-bottom+19}" text-anchor="middle">${p.time}</text>`).join('')}
+ <text x="${left}" y="15">${yLabel}</text>
+ </svg>`;
 }
 
 function updateCharts(){
  document.getElementById('likesTable').innerHTML=makeTable('likes');
  document.getElementById('internetTable').innerHTML=makeTable('internet');
-
  const g=gains();
-
- document.getElementById('likesStats').innerHTML=makeStats(g,'likes','Hour');
+ document.getElementById('likesStats').innerHTML=makeStats(g,'likes','Time');
  document.getElementById('internetStats').innerHTML=makeStats(internet,'Mbps','Time');
-
  document.getElementById('likesChart').innerHTML=svgChart(g,'Likes gained');
  document.getElementById('internetChart').innerHTML=svgChart(internet,'Download speed (Mbps)');
-
- document.getElementById('likesDescription').innerHTML=describeCurve(g);
- document.getElementById('internetDescription').innerHTML=describeCurve(internet);
-
- updateReport();
+ document.getElementById('likesDescription').innerHTML=`<p>${describeCurve(g)}</p>`;
+ document.getElementById('internetDescription').innerHTML=`<p>${describeCurve(internet)}</p>`;
+ if(document.getElementById('discover').classList.contains('active'))drawDiscovery();
 }
-
 updateCharts();
 
-
-// ==========================================
 // DISCOVER
-// ==========================================
-
 function activeCurve(){
- return document.getElementById('discoverSelect').value==='likes'
-  ?gains():internet;
+ return document.getElementById('discoverSelect').value==='likes'?gains():internet;
 }
 
-function intersectionCount(arr,target){
+function countHorizontalIntersections(arr,target){
  let count=0;
-
  for(let i=0;i<arr.length-1;i++){
-  const a=Number(arr[i].value);
-  const b=Number(arr[i+1].value);
-
+  const a=Number(arr[i].value),b=Number(arr[i+1].value);
   if(a===b){
    if(target===a)count++;
   }else if(target>=Math.min(a,b)&&target<=Math.max(a,b)){
    count++;
   }
  }
-
  return count;
 }
 
 function drawDiscovery(){
  const arr=activeCurve();
-
- if(arr.length<2){
-  document.getElementById('discoverChart').innerHTML='Add at least two measurements.';
-  return;
- }
-
+ if(arr.length<2)return;
+ const position=Number(document.getElementById('verticalPosition').value);
+ const index=Math.min(arr.length-1,Math.max(0,Math.round(position)));
  document.getElementById('discoverChart').innerHTML=svgChart(arr,'Measured value');
-
- const tests=[
-  0,
-  Math.floor((arr.length-1)/2),
-  arr.length-1
- ];
-
- document.getElementById('verticalTests').innerHTML=tests.map(t=>`
-  <div class="stat">
-   <strong>Vertical test at position ${t+1}</strong>
-   <p>Number of intersections: 1</p>
-   <p class="small">A connected line graph has one plotted position for each horizontal-axis position.</p>
-  </div>
- `).join('');
-
+ document.getElementById('verticalResult').innerHTML=
+  `<strong>1 intersection</strong><p>At horizontal-axis position ${fmt(position)}, the vertical line meets the connected graph once.</p>`;
  const hv=Number(document.getElementById('horizontalValue').value);
-
- document.getElementById('horizontalTest').innerHTML=`
-  <div class="stat">
-   <strong>${intersectionCount(arr,hv)} intersection(s)</strong>
-   <p>A horizontal line at ${fmt(hv)} meets the joined graph this many times.</p>
-  </div>
- `;
+ const count=countHorizontalIntersections(arr,hv);
+ document.getElementById('horizontalResult').innerHTML=
+  `<strong>${count} intersection(s)</strong><p>A horizontal line at ${fmt(hv)} meets the connected graph approximately ${count} time(s).</p>`;
 }
 
-// Part B
-document.getElementById('partB').innerHTML=observeData.map((o,i)=>`
- <div class="stat">
-  <strong>${o.field}</strong>
-  <p>${o.title}</p>
-  <label>Chosen vertical line position / x-coordinate</label>
-  <input id="partBx${i}" placeholder="Enter chosen x value">
-  <label>Number of intersections observed</label>
-  <input id="partBn${i}" type="number" min="0" placeholder="Count intersections">
- </div>
-`).join('');
-
-// Part C
+// CIRCLE
 function drawCircle(){
  const x0=Number(document.getElementById('circleX').value);
- const count=Math.abs(x0)<5?2:Math.abs(x0)===5?1:0;
-
+ const radius=2.6;
+ const distance=Math.abs(x0);
+ let count=distance<radius?2:(Math.abs(distance-radius)<.06?1:0);
+ const cx=300,cy=195,scale=48;
+ const lineX=cx+x0*scale;
  document.getElementById('circleChart').innerHTML=`
-  <svg class="chart" viewBox="0 0 600 390">
-   <line class="axis" x1="50" y1="195" x2="550" y2="195"/>
-   <line class="axis" x1="300" y1="20" x2="300" y2="365"/>
-
-   <circle cx="300" cy="195" r="130"
-    fill="none" stroke="#50dff2" stroke-width="3"/>
-
-   <line class="testline"
-    x1="${300+x0*26}" y1="25"
-    x2="${300+x0*26}" y2="365"/>
-
-   <text x="550" y="185" text-anchor="end">x</text>
-   <text x="310" y="25">y</text>
-   <text x="310" y="210">0</text>
-  </svg>
- `;
-
- document.getElementById('circleResult').innerHTML=`
-  <strong>${count} intersection(s)</strong>
-  <p>At x = ${fmt(x0)}, the vertical line meets the circle at ${count} point(s).</p>
- `;
+ <svg class="chart" viewBox="0 0 600 390">
+  <line class="gridline" x1="50" y1="195" x2="550" y2="195"/>
+  <line class="gridline" x1="300" y1="20" x2="300" y2="365"/>
+  <line class="axis" x1="50" y1="195" x2="550" y2="195"/>
+  <line class="axis" x1="300" y1="20" x2="300" y2="365"/>
+  <circle cx="${cx}" cy="${cy}" r="${radius*scale}" fill="none" stroke="#50dff2" stroke-width="3"/>
+  <line class="testline" x1="${lineX}" y1="20" x2="${lineX}" y2="365"/>
+  <text x="550" y="185" text-anchor="end">x</text>
+  <text x="310" y="25">y</text>
+  <text x="310" y="210">0</text>
+ </svg>`;
+ document.getElementById('circleResult').innerHTML=
+  `<strong>${count} intersection(s)</strong><p>At x = ${fmt(x0)}, the vertical line meets the circle at ${count} point(s).</p>`;
 }
-
 drawCircle();
-drawDiscovery();
 
-
-// ==========================================
 // CLASS VOTE
-// ==========================================
-
-const voteQuestions=[
- {
-  title:"QUESTION 01 — THE GROWTH CURVE",
-  q:"A growth curve shows a child's height at different ages. At age 8, the height is 125 cm. At age 10, it is 135 cm. Which conclusion is supported by these measurements?",
-  options:[
-   "The child grew exactly 5 cm every year.",
-   "The child's height increased by 10 cm between the two measurements.",
-   "The child's height increased at the same rate throughout both years."
-  ],
-  answer:1,
-  explanation:"The measurements prove an increase of 10 cm between ages 8 and 10. They do not tell us the exact growth at every moment."
- },
- {
-  title:"QUESTION 02 — THE TEMPERATURE CURVE",
-  q:"The temperature is 10°C at 6 AM, 18°C at noon, and 14°C at 6 PM. Which statement is necessarily true?",
-  options:[
-   "The temperature increased and then decreased.",
-   "The temperature increased continuously.",
-   "The temperature decreased continuously."
-  ],
-  answer:0,
-  explanation:"The first measured change is an increase, and the second measured change is a decrease."
- },
- {
-  title:"QUESTION 03 — THE ECONOMY CURVE",
-  q:"A product costs $40 in January and $50 in February. What is the percentage increase?",
-  options:[
-   "10%",
-   "20%",
-   "25%"
-  ],
-  answer:2,
-  explanation:"The increase is $10. The percentage increase is 10 divided by 40, multiplied by 100 = 25%."
- },
- {
-  title:"QUESTION 04 — THE SPORTS CURVE",
-  q:"A runner's speed changes from 3 m/s to 7 m/s and then to 5 m/s. Which statement is correct?",
-  options:[
-   "The maximum measured speed is 5 m/s.",
-   "The speed first increases and then decreases.",
-   "The speed decreases during the entire period."
-  ],
-  answer:1,
-  explanation:"The speed increases from 3 to 7 m/s, then decreases to 5 m/s."
- },
- {
-  title:"QUESTION 05 — THE CIRCLE",
-  q:"A vertical line passes through the centre of a circle. How many intersection points does it have with the circle?",
-  options:[
-   "One point",
-   "Two points",
-   "Three points"
-  ],
-  answer:1,
-  explanation:"A vertical line through the centre crosses the circle at its upper and lower sides, making two intersection points."
- },
- {
-  title:"QUESTION 06 — THE FINAL CHALLENGE",
-  q:"A curve represents the height of a growing child according to age. Can one age correspond to two different heights on this graph?",
-  options:[
-   "Yes, always.",
-   "No, because the graph gives one height for each age.",
-   "It depends only on the colour of the curve."
-  ],
-  answer:1,
-  explanation:"For this situation, one specific age corresponds to one measured height on the graph."
- }
-];
-
-let voteData=voteQuestions.map(()=>({A:0,B:0,C:0,submitted:false}));
-
-function renderVotes(){
- const root=document.getElementById('voteQuestions');
-
- root.innerHTML=voteQuestions.map((q,i)=>`
-  <div class="card">
-   <span class="tag">${q.title}</span>
-   <h3>${q.q}</h3>
-
-   ${q.options.map((option,j)=>{
-    const letter=String.fromCharCode(65+j);
-    return `
-     <div class="vote-option">
-      <div>
-       <b>${letter}.</b> ${option}
-       <div class="progress">
-        <div id="bar${i}${letter}"></div>
-       </div>
-      </div>
-      <div style="text-align:center">
-       <div class="vote-count" id="count${i}${letter}">0</div>
-       <button class="btn secondary no-print"
-        onclick="changeVote(${i},'${letter}',1)">+1</button>
-       <button class="btn secondary no-print"
-        onclick="changeVote(${i},'${letter}',-1)">−1</button>
-      </div>
-     </div>
-    `;
-   }).join('')}
-
-   <p class="muted" id="total${i}">Total votes: 0</p>
-
-   <button class="btn no-print" onclick="submitVote(${i})">
-    SUBMIT ANSWER
-   </button>
-
-   <button class="btn secondary no-print" onclick="resetVote(${i})">
-    RESET VOTES
-   </button>
-
-   <div class="quiz-result" id="voteResult${i}"></div>
-  </div>
- `).join('');
-
- voteData.forEach((v,i)=>refreshVote(i));
+let votes={A:0,B:0,C:0,D:0};
+function castVote(option){
+ votes[option]++;
+ updateVotes();
 }
-
-function changeVote(i,letter,amount){
- if(voteData[i].submitted)return;
-
- voteData[i][letter]=Math.max(0,voteData[i][letter]+amount);
- refreshVote(i);
+function resetVotes(){
+ votes={A:0,B:0,C:0,D:0};
+ updateVotes();
+ document.getElementById('voteAnswer').style.display='none';
 }
-
-function refreshVote(i){
- const v=voteData[i];
- const total=v.A+v.B+v.C;
-
- ['A','B','C'].forEach(letter=>{
-  const count=document.getElementById(`count${i}${letter}`);
-  const bar=document.getElementById(`bar${i}${letter}`);
-
-  if(count)count.textContent=v[letter];
-  if(bar)bar.style.width=(total?v[letter]/total*100:0)+'%';
+function updateVotes(){
+ const total=Object.values(votes).reduce((a,b)=>a+b,0);
+ document.getElementById('totalVotes').textContent=total;
+ ['A','B','C','D'].forEach(k=>{
+  document.getElementById('count'+k).textContent=votes[k];
+  document.getElementById('bar'+k).style.width=(total?votes[k]/total*100:0)+'%';
  });
-
- const totalEl=document.getElementById('total'+i);
- if(totalEl)totalEl.textContent='Total votes: '+total;
+}
+function revealVote(){
+ document.getElementById('voteAnswer').style.display='block';
 }
 
-function submitVote(i){
- const q=voteQuestions[i];
- const v=voteData[i];
- const result=document.getElementById('voteResult'+i);
-
- if(v.submitted)return;
-
- const total=v.A+v.B+v.C;
-
- if(total===0){
-  result.style.display='block';
-  result.innerHTML='<span class="bad">Record at least one vote first.</span>';
-  return;
- }
-
- v.submitted=true;
-
- const winner=Object.keys(v).filter(k=>['A','B','C'].includes(k))
-  .sort((a,b)=>v[b]-v[a])[0];
-
- const correct=String.fromCharCode(65+q.answer);
-
- result.style.display='block';
- result.innerHTML=`
-  <h3 class="good">CORRECT ANSWER: ${correct}</h3>
-  <p>${q.options[q.answer]}</p>
-  <p>${q.explanation}</p>
-  <hr>
-  <p><b>Class voting results:</b></p>
-  <p>A: ${v.A} votes · B: ${v.B} votes · C: ${v.C} votes</p>
-  <p>Most selected option: ${winner}</p>
-  <p class="good">The answer has been revealed. Discuss why the other options are incorrect.</p>
- `;
-
- refreshVote(i);
-}
-
-function resetVote(i){
- voteData[i]={A:0,B:0,C:0,submitted:false};
-
- const result=document.getElementById('voteResult'+i);
- result.style.display='none';
- result.innerHTML='';
-
- refreshVote(i);
-}
-
-renderVotes();
-
-
-// ==========================================
 // FINAL REPORT
-// ==========================================
-
 function updateReport(){
- const a=getStats(gains());
- const b=getStats(internet);
-
+ const a=getStats(gains()),b=getStats(internet);
  document.getElementById('finalResults').innerHTML=`
-  <p><b>Instagram Likes:</b>
-   Maximum: ${a?fmt(a.max)+' likes':'not available'};
-   Minimum: ${a?fmt(a.min)+' likes':'not available'}.
-  </p>
-
-  <p><b>Internet Speed:</b>
-   Maximum: ${b?fmt(b.max)+' Mbps':'not available'};
-   Minimum: ${b?fmt(b.min)+' Mbps':'not available'}.
-  </p>
- `;
-
+ <p><strong>Instagram Likes:</strong> Maximum ${a?fmt(a.max)+' likes':'not available'}; minimum ${a?fmt(a.min)+' likes':'not available'}.</p>
+ <p><strong>Internet Speed:</strong> Maximum ${b?fmt(b.max)+' Mbps':'not available'}; minimum ${b?fmt(b.min)+' Mbps':'not available'}.</p>`;
  const c=document.getElementById('conclusion').value.trim();
-
  document.getElementById('finalConclusion').textContent=
-  c||'Complete the Discover conclusion section to display your group’s final discovery here.';
+ c||'Complete the Discover conclusion section to display your group’s final discovery here.';
 }
-
 document.getElementById('conclusion').addEventListener('input',updateReport);
-
 updateReport();
-
 </script>
+
 </body>
 </html>
