@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE LAST TRANSMISSION</title>
+
+<style>
+:root {
+  --bg: #050914;
+  --panel: #0c1628;
+  --panel2: #101f35;
+  --cyan: #55e6ff;
+  --blue: #168dff;
+  --red: #ff5268;
+  --gold: #e8c77a;
+  --white: #f1f6ff;
+  --muted: #9aabc2;
+  --border: rgba(85,230,255,.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 80% 10%, rgba(22,141,255,.13), transparent 30%),
+    radial-gradient(circle at 10% 80%, rgba(85,230,255,.07), transparent 30%),
+    var(--bg);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+}
+
+header {
+  min-height: 72px;
+  padding: 16px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(5,9,20,.9);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+}
+
+.logo {
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--cyan);
+}
+
+.status {
+  color: #8dffbf;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav button,
+.small-button {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 9px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+nav button:hover,
+nav button.active,
+.small-button:hover {
+  color: var(--cyan);
+  border-color: var(--cyan);
+  background: rgba(85,230,255,.08);
+}
+
+main {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+  padding: 42px 0 80px;
+}
+
+.page {
+  display: none;
+  animation: appear .35s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  color: var(--cyan);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(38px, 7vw, 76px);
+  line-height: .98;
+  letter-spacing: -3px;
+  margin: 18px 0;
+}
+
+h2 {
+  font-size: clamp(25px, 4vw, 38px);
+  margin: 12px 0;
+}
+
+h3 {
+  color: var(--cyan);
+  letter-spacing: 1px;
+  font-size: 17px;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.hero {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 850px;
+}
+
+.hero h1 span {
+  color: var(--cyan);
+  text-shadow: 0 0 30px rgba(85,230,255,.3);
+}
+
+.hero-line {
+  height: 2px;
+  width: 130px;
+  background: var(--cyan);
+  margin: 25px 0;
+  box-shadow: 0 0 15px var(--cyan);
+}
+
+.primary-button {
+  background: var(--cyan);
+  color: #06101c;
+  border: none;
+  padding: 15px 23px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 18px;
+}
+
+.primary-button:hover {
+  background: white;
+  box-shadow: 0 0 25px rgba(85,230,255,.3);
+}
+
+.panel {
+  background: linear-gradient(145deg, rgba(16,31,53,.96), rgba(8,17,31,.96));
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 23px;
+  margin: 20px 0;
+  box-shadow: 0 10px 35px rgba(0,0,0,.15);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+}
+
+.tag {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 18px;
+}
+
+.data-image {
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  background: #07101e;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+}
+
+.answer-list {
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.answer-list li {
+  margin: 9px 0;
+}
+
+.source {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  color: var(--cyan);
+  background: rgba(85,230,255,.07);
+}
+
+td {
+  color: var(--muted);
+}
+
+.graph {
+  width: 100%;
+  min-height: 260px;
+  background: #07101e;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-top: 15px;
+}
+
+.graph svg {
+  width: 100%;
+  height: 280px;
+  display: block;
+}
+
+.graph-note {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.vote-options {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.vote-option {
+  padding: 18px 10px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #091528;
+}
+
+.vote-option strong {
+  display: block;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.vote-option button {
+  margin-top: 12px;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.vote-a strong { color: var(--cyan); }
+.vote-b strong { color: var(--red); }
+.vote-c strong { color: var(--gold); }
+
+.vote-a button { background: var(--cyan); color: #06101c; }
+.vote-b button { background: var(--red); color: #19050a; }
+.vote-c button { background: var(--gold); color: #171005; }
+
+.vote-count {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.result-bar {
+  height: 9px;
+  background: #17263a;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 7px;
+}
+
+.result-fill {
+  height: 100%;
+  width: 0;
+  transition: width .3s;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  color: var(--white);
+  background: #07101e;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin: 6px 0 13px;
+  font: inherit;
+}
+
+textarea {
+  min-height: 75px;
+  resize: vertical;
+}
+
+label {
+  display: block;
+  color: var(--cyan);
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 25px 5%;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.warning {
+  border-left: 3px solid var(--red);
+  padding: 12px 15px;
+  background: rgba(255,82,104,.07);
+  color: #ffd0d6;
+  line-height: 1.6;
+  margin: 18px 0;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.cyan {
+  color: var(--cyan);
+}
+
+.mission-number {
+  color: var(--red);
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+@media (max-width: 720px) {
+  header {
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vote-options {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding-top: 25px;
+  }
+
+  h1 {
+    letter-spacing: -1px;
+  }
+}
+
+@media print {
+  header, .primary-button, .small-button, .vote-options button {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .page {
+    display: block !important;
+    page-break-after: always;
+  }
+
+  .panel {
+    background: white;
+    color: black;
+    border: 1px solid #999;
+  }
+
+  p, td, .answer-list {
+    color: #333;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div>
+    <div class="logo">THE LAST TRANSMISSION</div>
+    <div class="status">● SYSTEM ONLINE</div>
+  </div>
+
+  <nav>
+    <button class="active" onclick="showPage('home', this)">HOME</button>
+    <button onclick="showPage('observe', this)">01 OBSERVE</button>
+    <button onclick="showPage('measure', this)">02 MEASURE</button>
+    <button onclick="showPage('discover', this)">03 DISCOVER</button>
+    <button onclick="showPage('vote', this)">CLASS VOTE</button>
+    <button onclick="showPage('final', this)">FINAL REPORT</button>
+  </nav>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section id="home" class="page active">
+  <div class="hero">
+    <div class="eyebrow">Transmission Network // Investigation 001</div>
+    <h1>THE LAST<br><span>TRANSMISSION</span></h1>
+    <div class="hero-line"></div>
+    <p>
+      Everything changes. Temperature, speed, views, battery levels.
+      But can we understand how the world changes?
+    </p>
+    <p class="gold">
+      FIVE INVESTIGATORS. THREE MISSIONS. ONE DISCOVERY.
+    </p>
+    <button class="primary-button" onclick="showPage('observe')">
+      START THE INVESTIGATION →
+    </button>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header">
+      <span class="tag">INCOMING TRANSMISSION</span>
+      <span class="status">SIGNAL DETECTED</span>
+    </div>
+    <h2>We have received a mysterious signal.</h2>
+    <p>
+      The signal contains patterns from real life. Our mission is to
+      observe them, collect our own data, and discover what curves
+      can tell us.
+    </p>
+    <p class="cyan">MISSION OBJECTIVE: Understand how quantities change.</p>
+  </div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="mission-number">MISSION 01</div>
+      <h3>OBSERVE</h3>
+      <p>Study four curves from four different fields.</p>
+    </div>
+    <div class="panel">
+      <div class="mission-number">MISSION 02</div>
+      <h3>MEASURE</h3>
+      <p>Collect real measurements and represent them with graphs.</p>
+    </div>
+    <div class="panel">
+      <div class="mission-number">MISSION 03</div>
+      <h3>DISCOVER</h3>
+      <p>Investigate vertical lines, horizontal lines, and a circle.</p>
+    </div>
+    <div class="panel">
+      <div class="mission-number">FINAL OBJECTIVE</div>
+      <h3>REPORT</h3>
+      <p>Explain what the investigation has revealed.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- OBSERVE -->
+<section id="observe" class="page">
+  <div class="eyebrow">Mission 01 // Observation</div>
+  <h2>FOUR CURVES. FOUR DIFFERENT WORLDS.</h2>
+  <p>
+    We investigated how quantities change in health, weather,
+    economy, and sport.
+  </p>
+
+  <div class="warning">
+    Replace the four image files in the images folder with your actual
+    sourced curve images. Each image should show one 2D curve, two
+    named axes, and units. Add the real source below each image.
+  </div>
+
+  <div id="observeCards" class="grid"></div>
+</section>
+
+
+<!-- MEASURE -->
+<section id="measure" class="page">
+  <div class="eyebrow">Mission 02 // Data Collection</div>
+  <h2>REAL DATA. REAL CHANGES.</h2>
+  <p>
+    We collected measurements over time and represented each
+    experiment with a table and a graph.
+  </p>
+
+  <div class="warning">
+    The numbers currently shown are DEMONSTRATION VALUES only.
+    Replace them with your group's actual measurements before presenting.
+    Keep at least eight measurements for each experiment.
+  </div>
+
+  <div id="measureCards"></div>
+</section>
+
+
+<!-- DISCOVER -->
+<section id="discover" class="page">
+  <div class="eyebrow">Mission 03 // The Discovery</div>
+  <h2>THE VERTICAL LINE TEST</h2>
+  <p>
+    We used vertical and horizontal lines to investigate the graphs
+    from Mission 02. We also tested a circle.
+  </p>
+
+  <div class="panel">
+    <h3>PART A — TEST OUR TWO GRAPHS</h3>
+    <p>
+      A vertical line is drawn through one x-value. A horizontal line
+      is drawn through one y-value. Count how many times each line
+      intersects the curve.
+    </p>
+    <div id="lineTests"></div>
+  </div>
+
+  <div class="panel">
+    <h3>PART B — TEST THE FOUR OBSERVATION CURVES</h3>
+    <p>
+      Examine each curve from Mission 01. Imagine drawing vertical
+      lines at different x-values and count the intersections.
+    </p>
+    <div id="observeTests"></div>
+  </div>
+
+  <div class="panel">
+    <h3>PART C — THE CIRCLE EXPERIMENT</h3>
+    <p>
+      The circle below is centered at (0,0) and has a radius of 2 units.
+      Choose a vertical line and see how many times it intersects
+      the circle.
+    </p>
+
+    <div class="graph">
+      <svg id="circleGraph" viewBox="0 0 600 300"
+           role="img" aria-label="Circle on a coordinate plane"></svg>
+    </div>
+
+    <label for="circleX">Choose the x-value of the vertical line</label>
+    <input id="circleX" type="range" min="-3" max="3" step="0.5" value="0"
+           oninput="updateCircle()">
+    <p id="circleResult" class="cyan"></p>
+  </div>
+
+  <div class="panel">
+    <h3>PART D — OUR CONCLUSION</h3>
+    <p>
+      A circle does not represent a single y-value for every x-value.
+      Some vertical lines intersect it twice, while others intersect
+      it once or not at all. Therefore, a complete circle cannot
+      represent a situation in which every input has exactly one output.
+    </p>
+  </div>
+</section>
+
+
+<!-- CLASS VOTE -->
+<section id="vote" class="page">
+  <div class="eyebrow">Audience Interaction // Classroom Mission</div>
+  <h2>YOUR DECISION MATTERS.</h2>
+  <p>
+    No phones are needed. Each student chooses A, B, or C using
+    the printed classroom cards. The investigators count the votes
+    and enter the totals below.
+  </p>
+
+  <div class="panel">
+    <div class="tag">QUESTION 01</div>
+    <h3>What can happen to a phone's battery level during a day?</h3>
+    <div class="vote-options">
+      <div class="vote-option vote-a">
+        <strong>A</strong>
+        It only decreases.
+        <div class="vote-count" id="q1A">0</div>
+        <button onclick="addVote(1,'A')">ADD VOTE</button>
+      </div>
+      <div class="vote-option vote-b">
+        <strong>B</strong>
+        It can increase and decrease.
+        <div class="vote-count" id="q1B">0</div>
+        <button onclick="addVote(1,'B')">ADD VOTE</button>
+      </div>
+      <div class="vote-option vote-c">
+        <strong>C</strong>
+        It stays constant.
+        <div class="vote-count" id="q1C">0</div>
+        <button onclick="addVote(1,'C')">ADD VOTE</button>
+      </div>
+    </div>
+    <div id="q1Results"></div>
+  </div>
+
+  <div class="panel">
+    <div class="tag">QUESTION 02</div>
+    <h3>A vertical line passes through the inside of a circle, not touching it as a tangent. How many intersection points are there?</h3>
+    <div class="vote-options">
+      <div class="vote-option vote-a">
+        <strong>A</strong>
+        One
+        <div class="vote-count" id="q2A">0</div>
+        <button onclick="addVote(2,'A')">ADD VOTE</button>
+      </div>
+      <div class="vote-option vote-b">
+        <strong>B</strong>
+        Two
+        <div class="vote-count" id="q2B">0</div>
+        <button onclick="addVote(2,'B')">ADD VOTE</button>
+      </div>
+      <div class="vote-option vote-c">
+        <strong>C</strong>
+        Three
+        <div class="vote-count" id="q2C">0</div>
+        <button onclick="addVote(2,'C')">ADD VOTE</button>
+      </div>
+    </div>
+    <div id="q2Results"></div>
+  </div>
+
+  <div class="panel">
+    <div class="tag">QUESTION 03</div>
+    <h3>Can a vertical line intersect a curve more than once?</h3>
+    <div class="vote-options">
+      <div class="vote-option vote-a">
+        <strong>A</strong>
+        Yes
+        <div class="vote-count" id="q3A">0</div>
+        <button onclick="addVote(3,'A')">ADD VOTE</button>
+      </div>
+      <div class="vote-option vote-b">
+        <strong>B</strong>
+        No
+        <div class="vote-count" id="q3B">0</div>
+        <button onclick="addVote(3,'B')">ADD VOTE</button>
+      </div>
+      <div class="vote-option vote-c">
+        <strong>C</strong>
+        It depends on the curve.
+        <div class="vote-count" id="q3C">0</div>
+        <button onclick="addVote(3,'C')">ADD VOTE</button>
+      </div>
+    </div>
+    <div id="q3Results"></div>
+  </div>
+
+  <button class="small-button" onclick="resetVotes()">RESET ALL VOTES</button>
+  <p class="graph-note">
+    The vote counter is for the live classroom presentation. It resets
+    when the page is refreshed.
+  </p>
+</section>
+
+
+<!-- FINAL REPORT -->
+<section id="final" class="page">
+  <div class="eyebrow">Final Report // Mission Complete</div>
+  <h2>THE SIGNAL HAS BEEN DECODED.</h2>
+
+  <div class="panel">
+    <div class="tag">INVESTIGATION SUMMARY</div>
+    <p>
+      Through observation and measurement, we explored how quantities
+      change in real-life situations. We represented these changes
+      using tables and graphs.
+    </p>
+    <p>
+      By testing vertical and horizontal lines, we investigated how
+      different lines intersect curves. The circle experiment showed
+      that a vertical line can intersect a curve more than once.
+    </p>
+    <p>
+      Our investigation demonstrates that graphs are not just drawings.
+      They help us describe patterns, compare values, and understand
+      changes in everyday life.
+    </p>
+  </div>
+
+  <div class="panel">
+    <div class="tag">THE INVESTIGATION TEAM</div>
+    <h3>FIVE INVESTIGATORS</h3>
+    <p>REFaat — Mission Commander</p>
+    <p>Jawad — Signal Analyst</p>
+    <p>Mohammad — Data Specialist</p>
+    <p>Hadi — Graph Engineer</p>
+    <p>Ahmad — Discovery Specialist</p>
+  </div>
+
+  <div class="panel">
+    <h2 class="cyan">EVERYTHING CHANGES.</h2>
+    <h2 class="gold">NOW WE KNOW HOW TO READ IT.</h2>
+    <p>TRANSMISSION COMPLETE.</p>
+  </div>
+
+  <button class="primary-button" onclick="window.print()">PRINT REPORT</button>
+</section>
+
+</main>
+
+<footer class="footer">
+  THE LAST TRANSMISSION // MATHEMATICAL INVESTIGATION
+</footer>
+
+
+<script>
+
+/* ==========================================================
+   EDIT YOUR PROJECT INFORMATION HERE
+   Replace the demonstration data and example text.
+   ========================================================== */
+
+const observeData = [
+  {
+    field: "HEALTH",
+    title: "Your real health curve title",
+    image: "images/health.png",
+    xAxis: "Horizontal axis and unit",
+    yAxis: "Vertical axis and unit",
+    description: "Write what the curve shows.",
+    point: "Give one coordinate and explain what it means.",
+    rises: "Explain where the curve rises.",
+    falls: "Explain where the curve falls.",
+    maximum: "State the maximum value and where it occurs.",
+    minimum: "State the minimum value and where it occurs.",
+    use: "Explain how this information can be used in real life.",
+    source: "Paste the real source URL here.",
+    vertical: "Write how many intersections your selected vertical lines make."
+  },
+  {
+    field: "WEATHER",
+    title: "Your real weather curve title",
+    image: "images/weather.png",
+    xAxis: "Horizontal axis and unit",
+    yAxis: "Vertical axis and unit",
+    description: "Write what the curve shows.",
+    point: "Give one coordinate and explain what it means.",
+    rises: "Explain where the curve rises.",
+    falls: "Explain where the curve falls.",
+    maximum: "State the maximum value and where it occurs.",
+    minimum: "State the minimum value and where it occurs.",
+    use: "Explain how this information can be used in real life.",
+    source: "Paste the real source URL here.",
+    vertical: "Write how many intersections your selected vertical lines make."
+  },
+  {
+    field: "ECONOMY",
+    title: "Your real economy curve title",
+    image: "images/economy.png",
+    xAxis: "Horizontal axis and unit",
+    yAxis: "Vertical axis and unit",
+    description: "Write what the curve shows.",
+    point: "Give one coordinate and explain what it means.",
+    rises: "Explain where the curve rises.",
+    falls: "Explain where the curve falls.",
+    maximum: "State the maximum value and where it occurs.",
+    minimum: "State the minimum value and where it occurs.",
+    use: "Explain how this information can be used in real life.",
+    source: "Paste the real source URL here.",
+    vertical: "Write how many intersections your selected vertical lines make."
+  },
+  {
+    field: "SPORT",
+    title: "Your real sport curve title",
+    image: "images/sport.png",
+    xAxis: "Horizontal axis and unit",
+    yAxis: "Vertical axis and unit",
+    description: "Write what the curve shows.",
+    point: "Give one coordinate and explain what it means.",
+    rises: "Explain where the curve rises.",
+    falls: "Explain where the curve falls.",
+    maximum: "State the maximum value and where it occurs.",
+    minimum: "State the minimum value and where it occurs.",
+    use: "Explain how this information can be used in real life.",
+    source: "Paste the real source URL here.",
+    vertical: "Write how many intersections your selected vertical lines make."
+  }
+];
+
+
+/*
+  DEMONSTRATION VALUES ONLY.
+  Replace the x and y arrays with your own measurements.
+  Every x value must have a matching y value.
+*/
+
+const experiments = [
+  {
+    title: "EXPERIMENT 01 — PHONE BATTERY LEVEL",
+    xName: "Time",
+    xUnit: "hours",
+    yName: "Battery level",
+    yUnit: "%",
+    x: [8, 9, 10, 11, 12, 13, 14, 15],
+    y: [100, 94, 88, 82, 76, 69, 63, 56],
+    description: "DEMONSTRATION DATA — replace with your actual battery readings."
+  },
+  {
+    title: "EXPERIMENT 02 — INTERNET SPEED",
+    xName: "Time",
+    xUnit: "hours",
+    yName: "Internet speed",
+    yUnit: "Mbps",
+    x: [8, 9, 10, 11, 12, 13, 14, 15],
+    y: [18, 22, 17, 25, 21, 19, 28, 24],
+    description: "DEMONSTRATION DATA — replace with your actual speed readings."
+  }
+];
+
+
+/* ==========================================================
+   NAVIGATION
+   ========================================================== */
+
+function showPage(pageId, clickedButton) {
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
+  });
+
+  document.getElementById(pageId).classList.add("active");
+
+  document.querySelectorAll("nav button").forEach(button => {
+    button.classList.remove("active");
+  });
+
+  if (clickedButton) {
+    clickedButton.classList.add("active");
+  } else {
+    const matchingButton = [...document.querySelectorAll("nav button")]
+      .find(button => button.getAttribute("onclick").includes(pageId));
+
+    if (matchingButton) matchingButton.classList.add("active");
+  }
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+
+/* ==========================================================
+   MISSION 01 — OBSERVE
+   ========================================================== */
+
+function renderObserve() {
+  const container = document.getElementById("observeCards");
+
+  container.innerHTML = observeData.map((item, index) => `
+    <article class="panel">
+      <div class="panel-header">
+        <span class="tag">OBSERVATION 0${index + 1}</span>
+        <span class="gold">${item.field}</span>
+      </div>
+
+      <h3>${item.title}</h3>
+
+      <img class="data-image"
+           src="${item.image}"
+           alt="${item.field} curve image"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+      <div class="warning" style="display:none;">
+        Add your image file: ${item.image}
+      </div>
+
+      <ol class="answer-list">
+        <li><strong>Field and title:</strong> ${item.field} — ${item.title}</li>
+        <li><strong>Horizontal axis:</strong> ${item.xAxis}</li>
+        <li><strong>Vertical axis:</strong> ${item.yAxis}</li>
+        <li><strong>What the curve shows:</strong> ${item.description}</li>
+        <li><strong>A point on the curve:</strong> ${item.point}</li>
+        <li><strong>Rising and falling:</strong> ${item.rises} ${item.falls}</li>
+        <li><strong>Maximum and minimum:</strong> ${item.maximum} ${item.minimum}</li>
+        <li><strong>Real-life use:</strong> ${item.use}</li>
+      </ol>
+
+      <p class="source"><strong>Source:</strong> ${item.source}</p>
+
+      <p class="source"><strong>Vertical line test:</strong> ${item.vertical}</p>
+    </article>
+  `).join("");
+}
+
+
+/* ==========================================================
+   GRAPH DRAWING
+   ========================================================== */
+
+function makeGraph(experiment, graphId) {
+  const width = 600;
+  const height = 280;
+  const left = 65;
+  const right = 25;
+  const top = 20;
+  const bottom = 50;
+
+  const plotWidth = width - left - right;
+  const plotHeight = height - top - bottom;
+
+  const xValues = experiment.x;
+  const yValues = experiment.y;
+
+  const minX = Math.min(...xValues);
+  const maxX = Math.max(...xValues);
+  const minY = Math.min(0, ...yValues);
+  const maxY = Math.max(...yValues);
+
+  const xRange = maxX - minX || 1;
+  const yRange = maxY - minY || 1;
+
+  const px = value => left + ((value - minX) / xRange) * plotWidth;
+  const py = value => top + plotHeight - ((value - minY) / yRange) * plotHeight;
+
+  let grid = "";
+
+  for (let i = 0; i <= 5; i++) {
+    const gx = left + (plotWidth / 5) * i;
+    const gy = top + (plotHeight / 5) * i;
+
+    grid += `<line x1="${gx}" y1="${top}" x2="${gx}" y2="${top + plotHeight}" stroke="#1b3049" />`;
+    grid += `<line x1="${left}" y1="${gy}" x2="${left + plotWidth}" y2="${gy}" stroke="#1b3049" />`;
+  }
+
+  const points = xValues.map((x, i) => `${px(x)},${py(yValues[i])}`).join(" ");
+
+  const circles = xValues.map((x, i) =>
+    `<circle cx="${px(x)}" cy="${py(yValues[i])}" r="5" fill="#55e6ff" />`
+  ).join("");
+
+  const xLabels = xValues.map(x =>
+    `<text x="${px(x)}" y="${top + plotHeight + 20}" fill="#9aabc2" font-size="11" text-anchor="middle">${x}</text>`
+  ).join("");
+
+  const yLabels = Array.from({length: 6}, (_, i) => {
+    const value = minY + (yRange / 5) * (5 - i);
+    return `<text x="${left - 10}" y="${top + (plotHeight / 5) * i + 4}" fill="#9aabc2" font-size="11" text-anchor="end">${Number(value.toFixed(1))}</text>`;
+  }).join("");
+
+  const svg = `
+    <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Data graph">
+      ${grid}
+      <line x1="${left}" y1="${top}" x2="${left}" y2="${top + plotHeight}" stroke="#9aabc2" stroke-width="2"/>
+      <line x1="${left}" y1="${top + plotHeight}" x2="${left + plotWidth}" y2="${top + plotHeight}" stroke="#9aabc2" stroke-width="2"/>
+      <polyline points="${points}" fill="none" stroke="#55e6ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+      ${circles}
+      ${xLabels}
+      ${yLabels}
+      <text x="${left + plotWidth/2}" y="${height - 7}" fill="#55e6ff" font-size="12" text-anchor="middle">${experiment.xName} (${experiment.xUnit})</text>
+      <text x="15" y="${top + plotHeight/2}" fill="#55e6ff" font-size="12" text-anchor="middle" transform="rotate(-90 15 ${top + plotHeight/2})">${experiment.yName} (${experiment.yUnit})</text>
+    </svg>
+  `;
+
+  document.getElementById(graphId).innerHTML = svg;
+}
+
+
+/* ==========================================================
+   MISSION 02 — MEASURE
+   ========================================================== */
+
+function renderMeasure() {
+  const container = document.getElementById("measureCards");
+
+  container.innerHTML = experiments.map((experiment, index) => {
+    const rows = experiment.x.map((x, i) => `
+      <tr>
+        <td>${x} ${experiment.xUnit}</td>
+        <td>${experiment.y[i]} ${experiment.yUnit}</td>
+      </tr>
+    `).join("");
+
+    const maximum = Math.max(...experiment.y);
+    const minimum = Math.min(...experiment.y);
+    const maxIndex = experiment.y.indexOf(maximum);
+    const minIndex = experiment.y.indexOf(minimum);
+
+    return `
+      <div class="panel">
+        <div class="panel-header">
+          <span class="tag">DATA SET 0${index + 1}</span>
+          <span class="gold">${experiment.yUnit}</span>
+        </div>
+
+        <h3>${experiment.title}</h3>
+        <p>${experiment.description}</p>
+
+        <div class="graph" id="graph${index}"></div>
+
+        <h3>MEASUREMENT TABLE</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>${experiment.xName} (${experiment.xUnit})</th>
+              <th>${experiment.yName} (${experiment.yUnit})</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+
+        <p><strong class="cyan">Maximum:</strong>
+          The maximum measured value is ${maximum} ${experiment.yUnit},
+          at ${experiment.x[maxIndex]} ${experiment.xUnit}.</p>
+
+        <p><strong class="cyan">Minimum:</strong>
+          The minimum measured value is ${minimum} ${experiment.yUnit},
+          at ${experiment.x[minIndex]} ${experiment.xUnit}.</p>
+
+        <p><strong class="cyan">Changes:</strong>
+          Describe where your graph rises and where it falls using
+          your actual measurements.</p>
+      </div>
+    `;
+  }).join("");
+
+  experiments.forEach((experiment, index) => {
+    makeGraph(experiment, `graph${index}`);
+  });
+}
+
+
+/* ==========================================================
+   MISSION 03 — LINE TESTS
+   ========================================================== */
+
+function countHorizontalIntersections(xValues, yValues, lineY) {
+  let count = 0;
+
+  for (let i = 0; i < yValues.length - 1; i++) {
+    const y1 = yValues[i];
+    const y2 = yValues[i + 1];
+
+    if ((y1 <= lineY && y2 > lineY) ||
+        (y2 <= lineY && y1 > lineY)) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+function renderLineTests() {
+  const container = document.getElementById("lineTests");
+
+  container.innerHTML = experiments.map((experiment, index) => {
+    const chosenIndex = Math.floor(experiment.x.length / 2);
+    const chosenX = experiment.x[chosenIndex];
+    const chosenY = experiment.y[chosenIndex];
+
+    const verticalCount = experiment.x.filter(x => x === chosenX).length;
+    const horizontalCount = countHorizontalIntersections(
+      experiment.x,
+      experiment.y,
+      chosenY
+    );
+
+    return `
+      <div class="panel">
+        <h3>${experiment.title}</h3>
+        <p>
+          <strong class="cyan">Vertical line:</strong>
+          At x = ${chosenX}, the line intersects the plotted data
+          at ${verticalCount} point(s).
+        </p>
+        <p>
+          <strong class="cyan">Horizontal line:</strong>
+          At y = ${chosenY}, the line intersects the connected graph
+          approximately ${horizontalCount} time(s).
+        </p>
+        <p class="graph-note">
+          For your final project, also draw three different vertical
+          lines and one horizontal line by hand on each graph, then
+          record the number of intersections.
+        </p>
+      </div>
+    `;
+  }).join("");
+}
+
+function renderObserveTests() {
+  const container = document.getElementById("observeTests");
+
+  container.innerHTML = observeData.map((item, index) => `
+    <p>
+      <strong class="cyan">${item.field}:</strong>
+      ${item.vertical}
+    </p>
+  `).join("");
+}
+
+
+/* ==========================================================
+   CIRCLE EXPERIMENT
+   ========================================================== */
+
+function drawCircle() {
+  const svg = document.getElementById("circleGraph");
+  const width = 600;
+  const height = 300;
+  const centerX = 300;
+  const centerY = 150;
+  const scale = 48;
+  const radius = 2 * scale;
+
+  let grid = "";
+
+  for (let x = 0; x <= 600; x += 48) {
+    grid += `<line x1="${x}" y1="10" x2="${x}" y2="290" stroke="#1b3049"/>`;
+  }
+
+  for (let y = 6; y <= 294; y += 48) {
+    grid += `<line x1="10" y1="${y}" x2="590" y2="${y}" stroke="#1b3049"/>`;
+  }
+
+  svg.innerHTML = `
+    ${grid}
+    <line x1="10" y1="${centerY}" x2="590" y2="${centerY}" stroke="#9aabc2" stroke-width="2"/>
+    <line x1="${centerX}" y1="10" x2="${centerX}" y2="290" stroke="#9aabc2" stroke-width="2"/>
+    <circle cx="${centerX}" cy="${centerY}" r="${radius}" fill="rgba(85,230,255,.05)" stroke="#55e6ff" stroke-width="3"/>
+    <text x="575" y="${centerY - 10}" fill="#55e6ff">x</text>
+    <text x="${centerX + 10}" y="20" fill="#55e6ff">y</text>
+    <text x="${centerX + 8}" y="${centerY + 16}" fill="#9aabc2">(0,0)</text>
+    <line id="circleTestLine" x1="${centerX}" y1="10" x2="${centerX}" y2="290" stroke="#ff5268" stroke-width="2" stroke-dasharray="7 5"/>
+  `;
+
+  updateCircle();
+}
+
+function updateCircle() {
+  const slider = document.getElementById("circleX");
+  if (!slider) return;
+
+  const x = Number(slider.value);
+  const centerX = 300;
+  const centerY = 150;
+  const scale = 48;
+  const screenX = centerX + x * scale;
+
+  const line = document.getElementById("circleTestLine");
+  if (line) {
+    line.setAttribute("x1", screenX);
+    line.setAttribute("x2", screenX);
+  }
+
+  let result;
+
+  if (Math.abs(x) < 2) {
+    result = "The vertical line intersects the circle at TWO points.";
+  } else if (Math.abs(x) === 2) {
+    result = "The vertical line touches the circle at ONE point (tangent).";
+  } else {
+    result = "The vertical line does NOT intersect the circle.";
+  }
+
+  document.getElementById("circleResult").textContent =
+    `x = ${x}: ${result}`;
+}
+
+
+/* ==========================================================
+   CLASSROOM VOTE COUNTERS
+   ========================================================== */
+
+const votes = {
+  1: { A: 0, B: 0, C: 0 },
+  2: { A: 0, B: 0, C: 0 },
+  3: { A: 0, B: 0, C: 0 }
+};
+
+function addVote(question, answer) {
+  votes[question][answer]++;
+  updateVoteDisplay(question);
+}
+
+function updateVoteDisplay(question) {
+  const options = ["A", "B", "C"];
+  const total = options.reduce((sum, option) =>
+    sum + votes[question][option], 0);
+
+  options.forEach(option => {
+    document.getElementById(`q${question}${option}`).textContent =
+      votes[question][option];
+  });
+
+  const resultContainer = document.getElementById(`q${question}Results`);
+
+  resultContainer.innerHTML = options.map(option => {
+    const percentage = total === 0
+      ? 0
+      : (votes[question][option] / total) * 100;
+
+    const color = option === "A" ? "#55e6ff"
+      : option === "B" ? "#ff5268" : "#e8c77a";
+
+    return `
+      <p>${option}: ${votes[question][option]} votes (${percentage.toFixed(0)}%)</p>
+      <div class="result-bar">
+        <div class="result-fill"
+             style="width:${percentage}%;background:${color};"></div>
+      </div>
+    `;
+  }).join("") + `<p class="cyan">TOTAL VOTES: ${total}</p>`;
+}
+
+function resetVotes() {
+  [1, 2, 3].forEach(question => {
+    votes[question] = { A: 0, B: 0, C: 0 };
+    updateVoteDisplay(question);
+  });
+}
+
+
+/* ==========================================================
+   START THE WEBSITE
+   ========================================================== */
+
+renderObserve();
+renderMeasure();
+renderLineTests();
+renderObserveTests();
+drawCircle();
+
+[1, 2, 3].forEach(updateVoteDisplay);
+
+</script>
+
+</body>
+</html>
