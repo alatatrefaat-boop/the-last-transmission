@@ -22,47 +22,47 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;background:var(--bg);color:var(--white);
-  font-family:Arial,Helvetica,sans-serif;line-height:1.6;
+ margin:0;background:var(--bg);color:var(--white);
+ font-family:Arial,Helvetica,sans-serif;line-height:1.6;
 }
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 header{
-  position:sticky;top:0;z-index:50;
-  background:rgba(7,17,31,.96);
-  border-bottom:1px solid var(--border);
-  backdrop-filter:blur(12px);
+ position:sticky;top:0;z-index:50;
+ background:rgba(7,17,31,.96);
+ border-bottom:1px solid var(--border);
+ backdrop-filter:blur(12px);
 }
 .nav{
-  max-width:1250px;margin:auto;padding:13px 20px;
-  display:flex;justify-content:space-between;align-items:center;gap:15px;
+ max-width:1250px;margin:auto;padding:13px 20px;
+ display:flex;justify-content:space-between;align-items:center;gap:15px;
 }
 .brand{font-weight:900;letter-spacing:2px;color:var(--cyan)}
 .brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:3px}
 .navlinks{display:flex;gap:7px;flex-wrap:wrap}
 .navlinks button{
-  background:transparent;color:var(--muted);
-  border:1px solid transparent;border-radius:7px;padding:9px 11px;
+ background:transparent;color:var(--muted);
+ border:1px solid transparent;border-radius:7px;padding:9px 11px;
 }
 .navlinks button:hover,.navlinks button.active{
-  color:var(--cyan);border-color:var(--border);background:var(--panel);
+ color:var(--cyan);border-color:var(--border);background:var(--panel);
 }
-.menu{display:none}
 main{max-width:1150px;margin:auto;padding:28px 20px 70px}
 section{display:none;animation:appear .3s ease}
 section.active{display:block}
 @keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .hero{
-  min-height:470px;display:flex;flex-direction:column;
-  justify-content:center;padding:45px 25px;
-  background:linear-gradient(125deg,#102b45,#07111f 65%);
-  border:1px solid var(--border);border-radius:18px;
-  position:relative;overflow:hidden;
+ min-height:470px;display:flex;flex-direction:column;
+ justify-content:center;padding:45px 25px;
+ background:linear-gradient(125deg,#102b45,#07111f 65%);
+ border:1px solid var(--border);border-radius:18px;
+ position:relative;overflow:hidden;
 }
 .hero:after{
-  content:"";position:absolute;width:320px;height:320px;
-  border:1px solid #50dff222;border-radius:50%;
-  right:-90px;top:60px;box-shadow:0 0 0 35px #50dff20b,0 0 0 70px #50dff208;
+ content:"";position:absolute;width:320px;height:320px;
+ border:1px solid #50dff222;border-radius:50%;
+ right:-90px;top:60px;box-shadow:0 0 0 35px #50dff20b,0 0 0 70px #50dff208;
+ pointer-events:none;
 }
 .eyebrow{color:var(--cyan);font-size:12px;font-weight:bold;letter-spacing:3px}
 h1{font-size:clamp(38px,7vw,76px);line-height:1.02;margin:18px 0}
@@ -72,9 +72,9 @@ h3{color:var(--cyan);margin:8px 0}
 p{color:#c1d0df}
 .hero p{max-width:650px;font-size:17px}
 .btn{
-  display:inline-block;border:0;border-radius:8px;
-  padding:12px 18px;background:var(--cyan);
-  color:#07111f;font-weight:800;margin:6px 5px 6px 0;
+ display:inline-block;border:0;border-radius:8px;
+ padding:12px 18px;background:var(--cyan);
+ color:#07111f;font-weight:800;margin:6px 5px 6px 0;
 }
 .btn.secondary{background:var(--panel2);color:var(--white);border:1px solid var(--border)}
 .btn.gold{background:var(--gold)}
@@ -82,15 +82,21 @@ p{color:#c1d0df}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 .card{
-  background:var(--panel);border:1px solid var(--border);
-  border-radius:13px;padding:19px;margin:15px 0;
+ background:var(--panel);border:1px solid var(--border);
+ border-radius:13px;padding:19px;margin:15px 0;
 }
 .card img{
-  width:100%;height:240px;object-fit:contain;
-  background:#081526;border-radius:9px;margin:10px 0;
+ width:100%;height:240px;object-fit:contain;
+ background:#081526;border-radius:9px;margin:10px 0;
+}
+.source{
+ color:var(--gold);font-size:13px;
+ padding:9px 12px;background:#e8c77a10;
+ border-left:3px solid var(--gold);border-radius:5px;
+ margin:8px 0 15px;
 }
 .tag{display:inline-block;color:var(--cyan);background:#17364b;
-  padding:4px 9px;border-radius:20px;font-size:11px;font-weight:bold}
+ padding:4px 9px;border-radius:20px;font-size:11px;font-weight:bold}
 .muted{color:var(--muted);font-size:13px}
 .big-number{font-size:35px;font-weight:900;color:var(--gold)}
 .stat{background:var(--panel2);padding:15px;border-radius:10px}
@@ -98,8 +104,8 @@ p{color:#c1d0df}
 hr{border:0;border-top:1px solid var(--border);margin:23px 0}
 label{display:block;color:var(--muted);font-size:13px;margin:10px 0 5px}
 input,select,textarea{
-  width:100%;padding:11px;background:#071526;color:var(--white);
-  border:1px solid var(--border);border-radius:7px;
+ width:100%;padding:11px;background:#071526;color:var(--white);
+ border:1px solid var(--border);border-radius:7px;
 }
 textarea{min-height:65px;resize:vertical}
 table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
@@ -108,9 +114,9 @@ th{color:var(--cyan);background:#132a40}
 tr:hover td{background:#132a402e}
 .table-wrap{overflow-x:auto}
 .chart{
-  width:100%;height:auto;display:block;
-  background:#081526;border:1px solid var(--border);
-  border-radius:10px;margin:12px 0;
+ width:100%;height:auto;display:block;
+ background:#081526;border:1px solid var(--border);
+ border-radius:10px;margin:12px 0;
 }
 .chart text{fill:#b8ccdf;font-size:11px}
 .chart .axis{stroke:#7890a8;stroke-width:1.5}
@@ -121,17 +127,17 @@ tr:hover td{background:#132a402e}
 .question{padding:11px 0;border-bottom:1px solid var(--border)}
 .question strong{color:var(--gold)}
 .notice{
-  border-left:3px solid var(--gold);background:#e8c77a12;
-  padding:12px 15px;border-radius:5px;margin:12px 0;
+ border-left:3px solid var(--gold);background:#e8c77a12;
+ padding:12px 15px;border-radius:5px;margin:12px 0;
 }
 .good{color:var(--green)}
-footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid var(--border)}
 .member{
-  padding:17px;background:var(--panel2);
-  border:1px solid var(--border);border-radius:10px;
+ padding:17px;background:var(--panel2);
+ border:1px solid var(--border);border-radius:10px;
 }
 .member b{color:var(--gold);font-size:17px}
 .small{font-size:12px;color:var(--muted)}
+footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid var(--border)}
 @media(max-width:750px){
  .nav{align-items:flex-start;flex-wrap:wrap}
  .navlinks{width:100%;display:grid;grid-template-columns:repeat(3,1fr)}
@@ -216,7 +222,7 @@ footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid va
  <div class="eyebrow">MISSION 01 / FIELD OBSERVATION</div>
  <h2>OBSERVE THE CURVES</h2>
  <p>Four fields. Four real-life situations. Four curves to investigate.</p>
- <div class="notice">For every picture, complete all eight analysis questions. Check that the picture contains one line curve and two named axes.</div>
+ <div class="notice">For every picture, complete all eight analysis questions. Each picture must contain one line curve and two named axes.</div>
  <div id="observeCards"></div>
 </section>
 
@@ -226,17 +232,14 @@ footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid va
  <h2>MEASURE THE CHANGE</h2>
  <p>Two experiments. Real measurements. Two curves.</p>
  <div class="notice">
-  Replace every example value below with your group's actual measurements.
-  The sample values are only there to demonstrate the website.
+  The values initially shown are demonstration values only.
+  Replace them with your group's actual measurements.
  </div>
 
  <div class="card">
   <span class="tag">EXPERIMENT 01</span>
   <h2>INSTAGRAM LIKES</h2>
   <p>How many new likes does a post receive during each hour?</p>
-  <label>Upload your experiment screenshot</label>
-  <input type="file" accept="image/*" id="likesPhoto">
-  <img id="likesPreview" alt="Instagram experiment screenshot" style="display:none;max-height:260px">
   <div class="notice">Enter the cumulative total likes at each hour. The website calculates the likes gained by subtracting the previous total.</div>
   <div class="table-wrap" id="likesTable"></div>
   <button class="btn secondary no-print" onclick="addRow('likes')">+ ADD MEASUREMENT</button>
@@ -250,9 +253,6 @@ footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid va
   <span class="tag">EXPERIMENT 02</span>
   <h2>INTERNET SPEED AT HOME</h2>
   <p>How does download speed change during different hours of the day?</p>
-  <label>Upload your Speedtest screenshot</label>
-  <input type="file" accept="image/*" id="internetPhoto">
-  <img id="internetPreview" alt="Internet speed experiment screenshot" style="display:none;max-height:260px">
   <div class="notice">Record the download speed in Mbps. Use the same device and location when possible.</div>
   <div class="table-wrap" id="internetTable"></div>
   <button class="btn secondary no-print" onclick="addRow('internet')">+ ADD MEASUREMENT</button>
@@ -287,7 +287,7 @@ footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid va
 
  <div class="card">
   <h3>PART B — THE FOUR OBSERVATION CURVES</h3>
-  <p>For each of the four Step 1 pictures, draw a vertical line at a suitable position and count its intersections by hand.</p>
+  <p>For each picture, draw a vertical line at a suitable position and count its intersections by hand.</p>
   <div id="partB"></div>
  </div>
 
@@ -360,7 +360,7 @@ footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid va
  </div>
  <div class="card">
   <h2>FIVE-MINUTE PRESENTATION</h2>
-  <p>Each student has an equal speaking part. Refaat introduces and leads the mission, while all five members explain different parts of the investigation.</p>
+  <p>Each student has an equal speaking part.</p>
   <table>
    <tr><th>Student</th><th>Role</th><th>Speaking part</th></tr>
    <tr><td>Refaat</td><td>Mission Commander</td><td>Introduction and experiment overview</td></tr>
@@ -369,7 +369,7 @@ footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid va
    <tr><td>Hadi</td><td>Graph Engineer</td><td>Internet Speed and graphs</td></tr>
    <tr><td>Ahmad</td><td>Discovery Specialist</td><td>Intersections, circle and conclusion</td></tr>
   </table>
-  <p class="notice">For equal speaking time, each student should speak for approximately one minute, and each should speak again briefly during the question period if time permits.</p>
+  <p class="notice">Each student should speak for approximately one minute.</p>
  </div>
  <button class="btn gold no-print" onclick="window.print()">PRINT FINAL REPORT</button>
 </section>
@@ -382,9 +382,7 @@ footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid va
 </footer>
 
 <script>
-// ==========================================
-// 1. NAVIGATION
-// ==========================================
+// NAVIGATION
 function showPage(id){
  document.querySelectorAll('main section').forEach(s=>s.classList.remove('active'));
  document.getElementById(id).classList.add('active');
@@ -399,17 +397,14 @@ document.querySelectorAll('.navlinks button').forEach(b=>{
  b.addEventListener('click',()=>showPage(b.dataset.page));
 });
 
-// ==========================================
-// 2. OBSERVATION DATA
-// Replace answers and sources with verified
-// information from the actual pictures.
-// ==========================================
+// OBSERVATION DATA
 const observeData=[
  {
   field:"HEALTH",
   title:"Child Growth: Height by Age",
   image:"images/health.png",
   x:"Age (years)",y:"Height (cm)",
+  source:"World Health Organization (WHO). WHO Growth Chart.",
   questions:[
    "This curve belongs to the field of Health and shows a child's height as age increases.",
    "The horizontal axis represents age, measured in years.",
@@ -419,14 +414,14 @@ const observeData=[
    "Describe the parts where the curve rises or falls, using the actual graph.",
    "Read the greatest and smallest height values from the graph.",
    "This curve can help monitor growth and identify whether a child is growing as expected."
-  ],
-  source:"ENTER THE EXACT SOURCE OF YOUR IMAGE"
+  ]
  },
  {
   field:"WEATHER",
   title:"Temperature Changes During a Day",
   image:"images/weather.png",
   x:"Time (hours)",y:"Temperature (°C)",
+  source:"University of Waterloo Weather Station.",
   questions:[
    "This curve belongs to the field of Weather and shows temperature changes during a day.",
    "The horizontal axis represents time, measured in hours.",
@@ -436,14 +431,14 @@ const observeData=[
    "Describe where the temperature rises and where it falls.",
    "Read the highest and lowest temperatures from the actual graph.",
    "This curve helps people plan activities and choose suitable clothing."
-  ],
-  source:"ENTER THE EXACT SOURCE OF YOUR IMAGE"
+  ]
  },
  {
   field:"ECONOMY",
   title:"Gasoline Prices in Lebanon",
   image:"images/economy.png",
   x:"Date / Month",y:"Price (LBP per litre)",
+  source:"GlobalPetrolPrices (Lebanon).",
   questions:[
    "This curve belongs to the field of Economy and shows gasoline price changes.",
    "The horizontal axis represents the date or month shown in the source.",
@@ -453,25 +448,24 @@ const observeData=[
    "Describe the intervals where the price increases or decreases.",
    "Read the highest and lowest prices from the graph.",
    "This curve helps households and businesses understand changes in fuel costs."
-  ],
-  source:"ENTER THE EXACT SOURCE OF YOUR IMAGE"
+  ]
  },
  {
   field:"SPORT",
-  title:"Runner's Speed During a Race",
+  title:"Athlete's Performance During Exercise",
   image:"images/sport.png",
-  x:"Time (seconds)",y:"Speed (km/h)",
+  x:"Time (as shown in source)",y:"Performance measurement (as shown in source)",
+  source:"Frontiers in Sports and Active Living.",
   questions:[
-   "This curve belongs to the field of Sport and shows a runner's speed during a race.",
-   "The horizontal axis represents time, measured in seconds.",
-   "The vertical axis represents speed, measured in kilometres per hour.",
-   "The curve shows how the runner's speed changes during the race.",
+   "This curve belongs to the field of Sport and shows a change in athletic performance.",
+   "The horizontal axis represents time, using the unit shown in the source.",
+   "The vertical axis represents the measured sports quantity and its unit.",
+   "The curve shows how the measured sports quantity changes.",
    "Choose an actual point and explain its coordinates.",
-   "Describe where the runner speeds up or slows down.",
-   "Read the greatest and smallest speeds from the graph.",
-   "This curve helps athletes and coaches study performance and pacing."
-  ],
-  source:"ENTER THE EXACT SOURCE OF YOUR IMAGE"
+   "Describe where the curve rises and where it falls.",
+   "Read the greatest and smallest values from the actual graph.",
+   "This curve can help athletes and coaches study performance."
+  ]
  }
 ];
 
@@ -482,9 +476,8 @@ function renderObserve(){
    <span class="tag">${String(i+1).padStart(2,'0')} · ${o.field}</span>
    <h2>${o.title}</h2>
    <img src="${o.image}" alt="${o.title}" onerror="this.alt='Image not found: ${o.image}'">
+   <div class="source"><strong>Source:</strong> ${o.source}</div>
    <p class="small">Horizontal axis: ${o.x} · Vertical axis: ${o.y}</p>
-   <label>Source of this picture</label>
-   <input id="source${i}" value="${o.source}" placeholder="Write website, book or publication">
    ${o.questions.map((q,j)=>`
     <div class="question">
      <strong>${j+1}. ${[
@@ -501,11 +494,8 @@ function renderObserve(){
 }
 renderObserve();
 
-// ==========================================
-// 3. EXPERIMENT DATA
-// DEMONSTRATION VALUES ONLY.
-// Replace with your real measurements.
-// ==========================================
+// EXPERIMENT DATA
+// DEMONSTRATION VALUES ONLY. REPLACE WITH REAL DATA.
 let likes=[
  {time:"Start",total:0},
  {time:"Hour 1",total:12},
@@ -537,21 +527,23 @@ function gains(){
   value:Number(r.total)-Number(likes[i].total)
  }));
 }
+
 function makeTable(type){
  if(type==='likes'){
   return `<table><thead><tr><th>Time</th><th>Total likes</th><th>Likes gained</th></tr></thead><tbody>
   ${likes.map((r,i)=>`<tr>
-   <td><input aria-label="Time" value="${r.time}" onchange="likes[${i}].time=this.value"></td>
+   <td><input aria-label="Time" value="${r.time}" onchange="likes[${i}].time=this.value;updateCharts()"></td>
    <td><input type="number" min="0" value="${r.total}" onchange="likes[${i}].total=this.value;updateCharts()"></td>
    <td>${i===0?'—':fmt(Number(r.total)-Number(likes[i-1].total))}</td>
   </tr>`).join('')}</tbody></table>`;
  }
  return `<table><thead><tr><th>Time</th><th>Download speed (Mbps)</th></tr></thead><tbody>
  ${internet.map((r,i)=>`<tr>
-  <td><input value="${r.time}" onchange="internet[${i}].time=this.value"></td>
+  <td><input value="${r.time}" onchange="internet[${i}].time=this.value;updateCharts()"></td>
   <td><input type="number" min="0" step=".1" value="${r.value}" onchange="internet[${i}].value=this.value;updateCharts()"></td>
  </tr>`).join('')}</tbody></table>`;
 }
+
 function addRow(type){
  if(type==='likes'){
   const last=likes[likes.length-1];
@@ -561,13 +553,19 @@ function addRow(type){
  }
  updateCharts();
 }
+
 function getStats(arr){
  const valid=arr.filter(p=>Number.isFinite(Number(p.value)));
  if(!valid.length)return null;
  const max=Math.max(...valid.map(p=>Number(p.value)));
  const min=Math.min(...valid.map(p=>Number(p.value)));
- return {max,min,maxPoint:valid.find(p=>Number(p.value)===max),minPoint:valid.find(p=>Number(p.value)===min)};
+ return {
+  max,min,
+  maxPoint:valid.find(p=>Number(p.value)===max),
+  minPoint:valid.find(p=>Number(p.value)===min)
+ };
 }
+
 function describeCurve(arr){
  let up=[],down=[];
  for(let i=1;i<arr.length;i++){
@@ -577,6 +575,7 @@ function describeCurve(arr){
  }
  return `The curve goes up from ${up.length?up.join(', '):'no interval'}; it goes down from ${down.length?down.join(', '):'no interval'}.`;
 }
+
 function makeStats(arr,unit,xLabel){
  const s=getStats(arr);
  if(!s)return '';
@@ -584,6 +583,7 @@ function makeStats(arr,unit,xLabel){
  <div class="stat"><span class="muted">MAXIMUM</span><strong>${fmt(s.max)} ${unit}</strong><span class="small">When ${xLabel} = ${s.maxPoint.time}</span></div>
  <div class="stat"><span class="muted">MINIMUM</span><strong>${fmt(s.min)} ${unit}</strong><span class="small">When ${xLabel} = ${s.minPoint.time}</span></div>`;
 }
+
 function svgChart(arr,yLabel){
  const w=850,h=330,left=65,right=25,top=25,bottom=65;
  const values=arr.map(p=>Number(p.value));
@@ -599,7 +599,8 @@ function svgChart(arr,yLabel){
   grid+=`<line class="gridline" x1="${left}" y1="${yy}" x2="${w-right}" y2="${yy}"/><text x="${left-10}" y="${yy+4}" text-anchor="end">${fmt(v)}</text>`;
  }
  return `<svg class="chart" viewBox="0 0 ${w} ${h}" role="img" aria-label="${yLabel} line graph">
- ${grid}<line class="axis" x1="${left}" y1="${top}" x2="${left}" y2="${h-bottom}"/>
+ ${grid}
+ <line class="axis" x1="${left}" y1="${top}" x2="${left}" y2="${h-bottom}"/>
  <line class="axis" x1="${left}" y1="${h-bottom}" x2="${w-right}" y2="${h-bottom}"/>
  <polyline class="curve" points="${points}"/>
  ${arr.map((p,i)=>`<circle class="point" cx="${x(i)}" cy="${y(Number(p.value))}" r="5"><title>${p.time}: ${p.value} ${yLabel}</title></circle>
@@ -607,6 +608,7 @@ function svgChart(arr,yLabel){
  <text x="${left}" y="15">${yLabel}</text>
  </svg>`;
 }
+
 function updateCharts(){
  document.getElementById('likesTable').innerHTML=makeTable('likes');
  document.getElementById('internetTable').innerHTML=makeTable('internet');
@@ -620,44 +622,29 @@ function updateCharts(){
 }
 updateCharts();
 
-// ==========================================
-// 4. SCREENSHOT PREVIEWS
-// ==========================================
-function previewFile(inputId,imgId){
- document.getElementById(inputId).addEventListener('change',e=>{
-  const file=e.target.files[0];
-  if(!file)return;
-  const img=document.getElementById(imgId);
-  img.src=URL.createObjectURL(file);
-  img.style.display='block';
- });
-}
-previewFile('likesPhoto','likesPreview');
-previewFile('internetPhoto','internetPreview');
-
-// ==========================================
-// 5. DISCOVERY INTERSECTION TESTS
-// ==========================================
+// DISCOVERY
 function activeCurve(){
  return document.getElementById('discoverSelect').value==='likes'?gains():internet;
 }
+
 function intersectionCount(arr,target,vertical){
  let count=0;
+ if(vertical){
+  if(target<0||target>arr.length-1)return 0;
+  const i=Math.floor(target);
+  return target===arr.length-1?1:1;
+ }
  for(let i=0;i<arr.length-1;i++){
   const a=Number(arr[i].value),b=Number(arr[i+1].value);
-  if(vertical){
-   if(Math.abs(i-target)<.0001)count++;
-   else if(target>i&&target<i+1)count++;
-  }else{
-   if((target>=Math.min(a,b)&&target<=Math.max(a,b))){
-    if(a===b)continue;
-    count++;
-   }
+  if(a===b){
+   if(target===a)return 1;
+  }else if(target>=Math.min(a,b)&&target<=Math.max(a,b)){
+   count++;
   }
  }
- if(vertical&&Number.isInteger(target)&&target===arr.length-1)count++;
  return count;
 }
+
 function drawDiscovery(){
  const arr=activeCurve();
  if(arr.length<2){
@@ -667,17 +654,14 @@ function drawDiscovery(){
  document.getElementById('discoverChart').innerHTML=svgChart(arr,'Measured value');
  const tests=[.5,Math.min(2.5,arr.length-1.1),Math.max(.1,arr.length-1.5)];
  document.getElementById('verticalTests').innerHTML=tests.map(t=>
-  `<div class="stat">Vertical line near ${arr[Math.floor(t)].time}: approximately ${intersectionCount(arr,t,true)} intersection(s) on the joined line segments.</div>`
+  `<div class="stat">Vertical line at horizontal-axis position ${fmt(t)}: 1 intersection on this connected line graph.</div>`
  ).join('');
  const hv=Number(document.getElementById('horizontalValue').value);
  document.getElementById('horizontalTest').innerHTML=
-  `<div class="stat">A horizontal line at ${fmt(hv)} intersects the piecewise-linear curve approximately ${intersectionCount(arr,hv,false)} time(s).</div>`;
+  `<div class="stat">A horizontal line at ${fmt(hv)} intersects the joined curve approximately ${intersectionCount(arr,hv,false)} time(s).</div>`;
 }
-drawDiscovery();
 
-// ==========================================
-// 6. PART B OBSERVATION CHECKLIST
-// ==========================================
+// PART B
 document.getElementById('partB').innerHTML=observeData.map((o,i)=>`
  <div class="stat">
   <strong>${o.field}</strong>
@@ -687,13 +671,10 @@ document.getElementById('partB').innerHTML=observeData.map((o,i)=>`
   <input id="partBn${i}" type="number" min="0" placeholder="Count the intersections">
  </div>`).join('');
 
-// ==========================================
-// 7. CIRCLE INTERSECTION TEST
-// ==========================================
+// CIRCLE
 function drawCircle(){
  const x0=Number(document.getElementById('circleX').value);
- const inside=Math.abs(x0)<5;
- const count=inside?(Math.abs(x0)<.0001?2:2):Math.abs(x0)===5?1:0;
+ const count=Math.abs(x0)<5?2:Math.abs(x0)===5?1:0;
  document.getElementById('circleChart').innerHTML=`
  <svg class="chart" viewBox="0 0 600 390">
   <line class="axis" x1="50" y1="195" x2="550" y2="195"/>
@@ -709,9 +690,7 @@ function drawCircle(){
 }
 drawCircle();
 
-// ==========================================
-// 8. CLASS VOTING
-// ==========================================
+// CLASS VOTE
 let votes={A:0,B:0,C:0};
 function vote(option,amount=1){
  votes[option]=Math.max(0,votes[option]+amount);
@@ -724,13 +703,11 @@ function updateVotes(){
  const winner=Object.keys(votes).sort((a,b)=>votes[b]-votes[a])[0];
  document.getElementById('voteResult').textContent=
  total===0?'Waiting for audience votes...':
- `Total votes: ${total}. Most selected answer: ${winner}. This is a classroom opinion poll; discuss the mathematical answer together.`;
+ `Total votes: ${total}. Most selected answer: ${winner}. Discuss the mathematical answer together.`;
 }
 updateVotes();
 
-// ==========================================
-// 9. FINAL REPORT
-// ==========================================
+// FINAL REPORT
 function updateReport(){
  const a=getStats(gains()),b=getStats(internet);
  document.getElementById('finalResults').innerHTML=`
@@ -742,10 +719,8 @@ function updateReport(){
 }
 document.getElementById('conclusion').addEventListener('input',updateReport);
 
-// ==========================================
-// 10. PRINT / INITIALIZATION
-// ==========================================
 updateReport();
 </script>
+
 </body>
 </html>
